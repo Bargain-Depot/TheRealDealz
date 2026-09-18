@@ -1,31 +1,13 @@
 (() => {
-  const TAG="therealdea0cb-20";
+  const TAG = "therealdea0cb-20";
 
   function asinFrom(img){
     if(img.dataset.asin) return img.dataset.asin;
-    const src=img.currentSrc || img.src || "";
-    const query=src.match(/[?&]ASIN=([A-Z0-9]{10})/i);
-    if(query) return query[1].toUpperCase();
-    const path=src.match(/\/([A-Z0-9]{10})(?:\.|\/|\?|$)/i);
-    return path ? path[1].toUpperCase() : "";
-  }
-
-  function placeholder(name){
-    const label=(name || "Product image").replace(/[&<>]/g,"").slice(0,58);
-    const svg=
-      '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="620" viewBox="0 0 800 620">'+
-      '<rect width="800" height="620" rx="36" fill="#f1ede5"/>'+
-      '<circle cx="400" cy="245" r="105" fill="#dfe5dc"/>'+
-      '<path d="M354 245h92M400 199v92" stroke="#748071" stroke-width="16" stroke-linecap="round"/>'+
-      '<text x="400" y="405" text-anchor="middle" fill="#3d493f" font-family="Arial,sans-serif" font-size="26" font-weight="700">'+escapeXml(label)+'</text>'+
-      '<text x="400" y="450" text-anchor="middle" fill="#7c8079" font-family="Arial,sans-serif" font-size="18">Product photo temporarily unavailable</text>'+
-      '<text x="400" y="487" text-anchor="middle" fill="#7c8079" font-family="Arial,sans-serif" font-size="16">Tap to view the current listing on Amazon</text>'+
-      '</svg>';
-    return "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent(svg);
-  }
-
-  function escapeXml(s){
-    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+    const src = img.currentSrc || img.src || "";
+    const q = src.match(/[?&]ASIN=([A-Z0-9]{10})/i);
+    if(q) return q[1].toUpperCase();
+    const p = src.match(/\/([A-Z0-9]{10})(?:\.|\/|\?|$)/i);
+    return p ? p[1].toUpperCase() : "";
   }
 
   function candidates(asin){
@@ -36,22 +18,82 @@
     ];
   }
 
-  document.addEventListener("error", e=>{
-    const img=e.target;
-    if(!(img instanceof HTMLImageElement)) return;
+  function installStyles(){
+    if(document.getElementById("trd-image-fallback-styles")) return;
+    const style=document.createElement("style");
+    style.id="trd-image-fallback-styles";
+    style.textContent=`
+      .trd-fallback-host{position:relative!important;overflow:hidden!important;background:#f1ede5!important}
+      .trd-img-fallback{width:100%;height:100%;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:22px;text-align:center;background:linear-gradient(145deg,#efeae1,#f8f5ef);color:#3d493f}
+      .trd-img-fallback-mark{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;background:#dfe5dc;border:1px solid #cbd4c7;font:800 25px/1 Manrope,Inter,Arial,sans-serif;letter-spacing:-1px}
+      .trd-img-fallback strong{max-width:320px;font:800 14px/1.3 Manrope,Inter,Arial,sans-serif}
+      .trd-img-fallback small{max-width:300px;color:#777b74;font:600 10px/1.45 Inter,Arial,sans-serif}
+      .trd-img-fallback .trd-fallback-action{margin-top:2px;font-size:9px;font-weight:800;letter-spacing:.04em;color:#3d493f}
+    `;
+    document.head.appendChild(style);
+  }
+
+  function makeInitials(name){
+    const words=String(name||"Product").replace(/[^A-Za-z0-9 ]+/g," ").trim().split(/\s+/).filter(Boolean);
+    return (words.slice(0,2).map(w=>w[0]).join("") || "P").toUpperCase();
+  }
+
+  function showFallback(img){
+    if(img.dataset.fallbackRendered==="true") return;
+    img.dataset.fallbackRendered="true";
+    const host=img.parentElement || img;
+    host.classList.add("trd-fallback-host");
+    img.style.display="none";
+
+    const box=document.createElement("div");
+    box.className="trd-img-fallback";
+    box.setAttribute("role","img");
+    const name=(img.alt || "Product").trim();
+    box.setAttribute("aria-label",`Product photo unavailable for ${name}`);
+    box.innerHTML=
+      '<div class="trd-img-fallback-mark" aria-hidden="true">'+makeInitials(name)+'</div>'+
+      '<strong>'+escapeHtml(name)+'</strong>'+
+      '<small>Product photo temporarily unavailable.</small>'+
+      '<span class="trd-fallback-action">Tap to view the current listing →</span>';
+    host.appendChild(box);
+  }
+
+  function escapeHtml(value){
+    return String(value).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+  }
+
+  function tryNext(img){
     const asin=asinFrom(img);
-    if(!asin) return;
+    if(!asin){ showFallback(img); return; }
 
     const step=Number(img.dataset.fallbackStep || "0");
-    const next=candidates(asin)[step];
-    if(next){
+    const list=candidates(asin);
+    if(step < list.length){
       img.dataset.fallbackStep=String(step+1);
-      img.src=next;
+      img.src=list[step];
       return;
     }
+    showFallback(img);
+  }
 
-    img.dataset.fallbackStep="done";
-    img.src=placeholder(img.alt);
-    img.classList.add("image-fallback-placeholder");
+  installStyles();
+
+  document.addEventListener("error", e=>{
+    const img=e.target;
+    if(img instanceof HTMLImageElement) tryNext(img);
   }, true);
+
+  document.addEventListener("load", e=>{
+    const img=e.target;
+    if(!(img instanceof HTMLImageElement)) return;
+    if((img.naturalWidth && img.naturalWidth <= 2) || (img.naturalHeight && img.naturalHeight <= 2)){
+      tryNext(img);
+    }
+  }, true);
+
+  window.addEventListener("DOMContentLoaded", ()=>{
+    document.querySelectorAll("img").forEach(img=>{
+      if(img.complete && (!img.naturalWidth || !img.naturalHeight)) tryNext(img);
+    });
+  });
 })();
