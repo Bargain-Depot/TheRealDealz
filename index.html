@@ -1,234 +1,197 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f6f4ef">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<meta name="therealdealz-build" content="2026.09.18.8">
-<meta name="description" content="TheReal_Dealz — curated Amazon finds, useful products, and buying guides.">
-<title>TheReal_Dealz — The Internet's Best Dealz, Curated</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#f6f4ef;--panel:#fff;--panel2:#eeeae3;--text:#20231f;--muted:#73766f;--sage:#667367;--sage-dark:#354239;--sage-soft:#dfe4dc;--stone:#cfc9bf;--border:#ddd8cf;--shadow:0 18px 45px rgba(53,48,40,.08)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.55;overflow-x:hidden}a{color:inherit;text-decoration:none}.shell{width:min(1160px,calc(100% - 32px));margin:auto}
-.topbar{background:#ece8e1;color:#4e514c;text-align:center;padding:9px 16px;font-size:11px;font-weight:800;letter-spacing:.08em;border-bottom:1px solid var(--border)}
-.header{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:rgba(246,244,239,.92);backdrop-filter:blur(12px);position:sticky;top:0;z-index:20}
-.logo{font:800 25px "Manrope",Inter,sans-serif;letter-spacing:-1.1px}.logo em{font-style:normal;color:var(--sage-dark)}.logo i{display:none}
-.nav{display:flex;gap:28px;font-size:13px;font-weight:700;color:#656862}.nav a:hover{color:var(--sage-dark)}.tiktok{border:1px solid var(--border);padding:10px 14px;border-radius:999px;font-size:12px;font-weight:800;background:#fff;box-shadow:0 4px 14px rgba(48,44,37,.04)}
-.hero{min-height:590px;display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center;padding:78px 0 72px}.eyebrow{font-size:10px;font-weight:800;letter-spacing:.16em;color:#8a8d86;margin-bottom:14px}.eyebrow b{color:var(--sage-dark)}
-h1,h2{font-family:"Manrope",Inter,sans-serif;line-height:1.02;letter-spacing:-.045em;margin:0}h1{font-size:clamp(50px,7.1vw,88px);font-weight:800}h1 em{display:block;color:var(--sage-dark);font-style:normal}
-.hero p{color:var(--muted);font-size:18px;max-width:620px;margin:25px 0}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;padding:13px 18px;border-radius:11px;font-weight:800;font-size:13px;border:1px solid var(--border);background:#fff}.btn.primary{background:var(--sage-dark);color:white;border-color:var(--sage-dark)}.trust{display:flex;gap:16px;flex-wrap:wrap;color:#7d8079;font-size:11px;font-weight:700;margin-top:22px}
-.radar-card{border:1px solid var(--border);border-radius:26px;background:#fff;padding:19px;box-shadow:var(--shadow)}.radar-top{display:flex;justify-content:space-between;font-size:10px;font-weight:800;color:#8c8f88}.live{color:var(--sage-dark);border:1px solid #d8ddd5;background:#f7f8f5;border-radius:99px;padding:7px 9px}.live:before{content:"";display:inline-block;width:7px;height:7px;background:var(--sage);border-radius:50%;margin-right:6px}
-.radar{aspect-ratio:1;max-width:325px;margin:22px auto;border-radius:50%;position:relative;overflow:hidden;background:radial-gradient(circle,#eef1ec 0 8%,#fafaf8 9% 100%);border:1px solid #dce2d9}.radar:before,.radar:after{content:"";position:absolute;background:rgba(102,115,103,.12)}.radar:before{width:1px;height:100%;left:50%}.radar:after{height:1px;width:100%;top:50%}.ring{position:absolute;border:1px solid rgba(102,115,103,.18);border-radius:50%;inset:14%}.ring.r2{inset:28%}.ring.r3{inset:41%}.sweep{position:absolute;inset:0;background:conic-gradient(from 0deg,transparent 0 78%,rgba(102,115,103,.03) 86%,rgba(102,115,103,.20) 99%,transparent 100%);animation:spin 6s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.radar-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:var(--sage-dark);color:white;font:800 27px "Manrope",Inter,sans-serif}
-.radar-copy{border:1px solid #e4e0d8;background:#faf9f6;border-radius:16px;padding:15px}.radar-copy strong{display:block;font-size:15px}.radar-copy span{display:block;color:#7f817c;font-size:12px;margin-top:4px}
-.ticker{border-block:1px solid var(--border);background:#eeebe5;overflow:hidden;padding:13px 0}.ticker div{display:flex;gap:25px;white-space:nowrap;width:max-content;font:700 11px "Manrope",Inter,sans-serif;letter-spacing:.08em;color:#777a74;animation:move 30s linear infinite}.ticker b{color:#a6aca3}@keyframes move{to{transform:translateX(-50%)}}
-.campaign-card{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;border:1px solid var(--border);background:#fff;border-radius:22px;padding:24px 26px;box-shadow:0 10px 28px rgba(53,48,40,.05);transition:.2s ease}.campaign-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.campaign-card .campaign-title{display:block;font:800 28px/1.05 "Manrope",Inter,sans-serif;letter-spacing:-.035em}.campaign-card .campaign-copy{display:block;color:#767972;font-size:13px;margin-top:8px}.campaign-card .campaign-arrow{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--sage-dark);color:#fff;font-size:22px;font-weight:900}
-.section{padding:82px 0}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:25px}.section h2{font-size:clamp(34px,5vw,58px);font-weight:800}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{border:1px solid var(--border);background:#fff;color:#73766f;border-radius:99px;padding:8px 12px;font-size:11px;font-weight:800;cursor:pointer}.filter.active,.filter:hover{background:var(--sage-dark);color:white;border-color:var(--sage-dark)}
-.disclosure{font-size:11px;color:#74766f;background:#fff;border:1px solid var(--border);border-left:3px solid var(--sage);padding:11px 13px;border-radius:10px;margin-bottom:18px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.deal{border:1px solid var(--border);background:#fff;border-radius:20px;overflow:hidden;transition:.2s ease;box-shadow:0 7px 20px rgba(53,48,40,.035)}.deal:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.visual{height:205px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f1eee8,#fbfaf7);overflow:hidden}.visual:after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:var(--accent);filter:blur(95px);opacity:.09}.deal-illustration{position:relative;z-index:1;width:138px;height:138px;display:grid;place-items:center;filter:saturate(.55) contrast(.96) drop-shadow(0 15px 24px rgba(40,38,34,.14))}
-.deal-illustration svg{width:100%;height:100%;overflow:visible}.floaty{animation:floatY 3.8s ease-in-out infinite}.pulse{animation:pulseGlow 2.8s ease-in-out infinite}.orbit{animation:spinSlow 10s linear infinite;transform-origin:center}.spark{animation:flicker 2s ease-in-out infinite}.tilt{animation:tilt 4s ease-in-out infinite;transform-origin:center}.cable-flow{stroke-dasharray:7 9;animation:cableFlow 2s linear infinite}.scan{animation:scan 2.6s ease-in-out infinite}.delay-1{animation-delay:.4s}.delay-2{animation-delay:.8s}
-@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}@keyframes pulseGlow{0%,100%{opacity:.8;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}@keyframes spinSlow{from{transform:rotate(0)}to{transform:rotate(360deg)}}@keyframes flicker{0%,100%{opacity:.55}50%{opacity:1}}@keyframes tilt{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(3deg)}}@keyframes cableFlow{to{stroke-dashoffset:-32}}@keyframes scan{0%,100%{transform:translateY(-8px);opacity:.35}50%{transform:translateY(10px);opacity:.9}}
-.badge{position:absolute;left:12px;top:12px;z-index:2;border:1px solid #dfdbd3;background:rgba(255,255,255,.92);border-radius:99px;padding:6px 8px;font-size:9px;font-weight:800;letter-spacing:.08em;color:#5e615b}
-.deal-body{padding:18px}.meta{display:flex;justify-content:space-between;color:#858881;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.deal h3{font-size:19px;line-height:1.15;letter-spacing:-.025em;margin:10px 0 7px}.deal p{font-size:12px;color:#777a73;margin:0 0 16px}.deal .cta{display:block;text-align:center;border-radius:10px;padding:10px;background:#f7f5f1;border:1px solid #e0dcd4;color:#696c66;font-size:11px;font-weight:800}
-.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.cat{min-height:195px;border:1px solid var(--border);border-radius:20px;background:#fff;padding:19px;display:flex;flex-direction:column;position:relative;overflow:hidden;box-shadow:0 6px 16px rgba(53,48,40,.025)}.cat:after{content:"";position:absolute;width:145px;height:145px;border-radius:50%;right:-68px;bottom:-76px;background:var(--accent);filter:blur(40px);opacity:.08}.cat small{font-size:10px;color:#9a9c96;font-weight:700}.cat strong{font:800 26px "Manrope",Inter,sans-serif;margin-top:auto}.cat span{font-size:11px;color:#7d8079}
-.guide{display:grid;grid-template-columns:1fr 1.1fr;border:1px solid var(--border);background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 10px 28px rgba(53,48,40,.04)}.guide-art{min-height:370px;background:#dde4d8;position:relative;display:grid;place-items:center}.guide-art:before{content:"";width:290px;height:290px;border:2px dashed rgba(53,66,57,.12);border-radius:50%;position:absolute}.cup{width:150px;height:175px;position:relative;transform:rotate(7deg)}.cup:before{content:"";position:absolute;left:15px;bottom:15px;width:120px;height:140px;background:#faf8f2;border-radius:18px 18px 48px 48px;box-shadow:0 20px 25px rgba(0,0,0,.08)}.cup:after{content:"";position:absolute;left:15px;top:21px;width:120px;height:35px;border-radius:50%;background:#95aa84;border:7px solid #faf8f2;box-sizing:border-box}.guide-copy{padding:38px;display:flex;flex-direction:column;justify-content:center}.guide-copy h3{font:800 34px/1.05 "Manrope",Inter,sans-serif;letter-spacing:-.04em;margin:9px 0 13px}.guide-copy p{color:#74776f;font-size:14px}.guide-copy .label{font-size:10px;font-weight:800;letter-spacing:.12em;color:var(--sage-dark)}
-.about{background:#e9e6df;color:var(--text);padding:72px 0;border-block:1px solid #dcd7ce}.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:70px}.about h2{font-size:clamp(36px,5vw,60px);font-weight:800}.about p{color:#686b65}.about .btn{background:#fff;border-color:#d5d0c7;color:var(--text)}
-.footer{padding:48px 0 20px;border-top:1px solid var(--border);background:#f1eee8}.footgrid{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:30px}.footgrid div{display:flex;flex-direction:column;gap:8px}.footgrid a,.footgrid p{font-size:11px;color:#73766f}.footgrid strong{font-size:11px}.bottom{border-top:1px solid #d9d4cb;margin-top:32px;padding-top:15px;display:flex;justify-content:space-between;gap:20px;color:#888b84;font-size:10px}
-@media(max-width:850px){.nav{display:none}.hero{grid-template-columns:1fr}.radar-card{max-width:520px}.grid{grid-template-columns:1fr 1fr}.categories{grid-template-columns:1fr 1fr}.guide{grid-template-columns:1fr}.about-inner{grid-template-columns:1fr}.footgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.header{height:70px}.logo{font-size:22px}.tiktok{font-size:10px}.hero{min-height:auto;padding:50px 0 46px;gap:32px}h1{font-size:48px}.hero p{font-size:15px}.section{padding:60px 0}.section-head{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.categories{grid-template-columns:1fr 1fr}.cat{min-height:155px}.guide-art{min-height:280px}.guide-copy{padding:24px}.guide-copy h3{font-size:29px}.footgrid{grid-template-columns:1fr 1fr}.footgrid>div:first-child{grid-column:1/-1}.bottom{flex-direction:column}.campaign-card{grid-template-columns:1fr}.campaign-card .campaign-arrow{display:none}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4f0e8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="therealdealz-build" content="2026.09.18.20">
+  <meta name="description" content="TheReal_Dealz — a curated feed of useful finds, shopping guides, trend watchlists, and verified Amazon links.">
+  <title>TheReal_Dealz — Curated Finds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260918-20">
 </head>
 <body>
-<div class="topbar">CURATED FINDS • CLEAR PICKS • NO FAKE URGENCY</div>
-<header class="header shell">
-  <a class="logo" href="#top">TheReal_<em>Dealz</em><i>●</i></a>
-  <nav class="nav"><a href="#dealz">Dealz</a><a href="#guides">Guides</a><a href="#categories">Categories</a><a href="#about">About</a></nav>
-  <a class="tiktok" href="https://www.tiktok.com/@the_realdealz" target="_blank" rel="noopener">TikTok ↗</a>
-</header>
+  <div class="announcement">CURATED FINDS · VERIFIED LINKS · NO FAKE URGENCY</div>
 
-<main id="top">
-<section class="hero shell">
-  <div>
-    <div class="eyebrow"><b>THE REAL DEALZ</b> • CURATED SHOPPING</div>
-    <h1>Stop scrolling.<em>We found the good stuff.</em></h1>
-    <p>Curated products, useful guides, and timely finds for people who want good recommendations without the endless scroll.</p>
-    <div class="actions"><a class="btn primary" href="#dealz">Shop the latest dealz</a><a class="btn" href="#guides">Read buying guides</a></div>
-    <div class="trust"><span>✓ Curated picks</span><span>✓ No fake urgency</span><span>✓ Clear affiliate disclosure</span></div>
-  </div>
-  <aside class="radar-card">
-    <div class="radar-top"><span class="live">DEAL RADAR</span><span id="updated">UPDATED TODAY</span></div>
-    <div class="radar"><div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div><div class="sweep"></div><div class="radar-center">%</div></div>
-    <div class="radar-copy"><strong>We watch the trends so you don't have to.</strong><span>Search + shopping + social signals → useful finds.</span></div>
-  </aside>
-</section>
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="brand nav-trigger" data-view="home" aria-label="Go home">TheReal_<span>Dealz</span></button>
 
-<div class="ticker"><div><span>TECH FINDS</span><b>✦</b><span>HOME UPGRADES</span><b>✦</b><span>UNDER $25</span><b>✦</b><span>KITCHEN</span><b>✦</b><span>BEAUTY</span><b>✦</b><span>SEASONAL</span><b>✦</b><span>TECH FINDS</span><b>✦</b><span>HOME UPGRADES</span><b>✦</b><span>UNDER $25</span><b>✦</b><span>KITCHEN</span><b>✦</b></div></div>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <button class="nav-link active" data-view="home">Home</button>
+        <button class="nav-link" data-view="trending">Trending</button>
+        <button class="nav-link" data-view="watchlist">Watchlist</button>
+        <button class="nav-link" data-view="guides">Guides</button>
+        <button class="nav-link" data-view="categories">Categories</button>
+      </nav>
 
-<section class="shell" style="padding:28px 0 10px">
-  <a href="articles/prime-big-deal-days-2026.html" class="campaign-card">
-    <div>
-      <div class="eyebrow" style="margin-bottom:8px"><b>NEW CAMPAIGN</b> • PRIME BIG DEAL DAYS 2026</div>
-      <strong class="campaign-title">What to watch before October 6.</strong>
-      <span class="campaign-copy">Early deals are live. Explore the specific products we’re watching across tech, home, kitchen, and more.</span>
+      <div class="header-actions">
+        <button class="icon-button nav-trigger" data-view="search" aria-label="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+        </button>
+        <button class="saved-button nav-trigger" data-view="saved" aria-label="Saved items">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.7a5.6 5.6 0 0 0-7.9 0L12 5.6l-.9-.9a5.6 5.6 0 1 0-7.9 7.9L12 21l8.8-8.4a5.6 5.6 0 0 0 0-7.9Z"></path></svg>
+          <span class="saved-count" id="savedCount">0</span>
+        </button>
+      </div>
     </div>
-    <span class="campaign-arrow">→</span>
-  </a>
-</section>
+  </header>
 
-<section id="dealz" class="section shell">
-  <div class="section-head"><div><div class="eyebrow"><b>TRENDING NOW</b></div><h2>Dealz worth knowing about.</h2></div><div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="tech">Tech</button><button class="filter" data-filter="home">Home</button><button class="filter" data-filter="kitchen">Kitchen</button><button class="filter" data-filter="beauty">Beauty</button></div></div>
-  <div class="disclosure"><strong>Heads up:</strong> Some links may be affiliate links. If you buy through them, TheReal_Dealz may earn a commission at no extra cost to you.</div>
-  <div class="grid" id="dealGrid"></div>
-</section>
+  <main id="app">
+    <section class="view active" id="homeView" data-view-panel="home">
+      <div class="home-intro shell">
+        <div>
+          <p class="kicker">THE REAL DEALZ</p>
+          <h1>The good stuff,<br><span>without the endless scroll.</span></h1>
+          <p class="intro-copy">A shopping feed of timely finds, useful products, and buying guides — curated before they earn a spot here.</p>
+        </div>
+        <div class="intro-note">
+          <span class="pulse-dot"></span>
+          <div><strong>Feed updated as new finds are verified.</strong><small>No hard-coded prices. No fake countdowns.</small></div>
+        </div>
+      </div>
 
-<section id="categories" class="section shell">
-  <div class="eyebrow"><b>SHOP SMARTER</b></div><h2 style="margin-bottom:24px">Pick your rabbit hole.</h2>
-  <div class="categories">
-    <a class="cat" style="--accent:var(--blue)" href="#dealz"><small>01</small><strong>Tech</strong><span>chargers • accessories • smart finds</span></a>
-    <a class="cat" style="--accent:var(--green)" href="#dealz"><small>02</small><strong>Home</strong><span>organization • comfort • upgrades</span></a>
-    <a class="cat" style="--accent:var(--yellow)" href="#dealz"><small>03</small><strong>Kitchen</strong><span>tools • coffee • prep shortcuts</span></a>
-    <a class="cat" style="--accent:#ff70d6" href="#dealz"><small>04</small><strong>Beauty</strong><span>viral finds • practical staples</span></a>
+      <div class="feed-controls-wrap">
+        <div class="feed-controls shell">
+          <div class="feed-tabs" role="tablist" aria-label="Feed mode">
+            <button class="feed-tab active" data-feed-mode="for-you">For You</button>
+            <button class="feed-tab" data-feed-mode="latest">Latest</button>
+          </div>
+          <div class="category-scroller" id="categoryScroller" aria-label="Feed categories"></div>
+        </div>
+      </div>
+
+      <div class="home-layout shell">
+        <section class="feed-column" aria-label="Main shopping feed">
+          <div id="featuredPost"></div>
+          <div id="feed" class="feed-stack"></div>
+          <div id="feedSentinel" class="feed-sentinel" aria-hidden="true"></div>
+          <div id="feedEnd" class="feed-end hidden">You’re caught up for now.</div>
+        </section>
+
+        <aside class="home-sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-heading"><span>Trending on TheReal_Dealz</span><button data-view="trending" class="text-link nav-trigger">See all</button></div>
+            <div id="sidebarTrending"></div>
+          </div>
+          <div class="sidebar-card soft">
+            <p class="sidebar-kicker">HOW WE PICK</p>
+            <h3>Useful beats viral.</h3>
+            <p>Trend signals tell us what people are noticing. They do not automatically turn a product into a recommendation.</p>
+            <button class="text-link open-post" data-post="how-we-pick">Read our approach →</button>
+          </div>
+          <div class="sidebar-card disclosure-card">
+            <strong>Affiliate disclosure</strong>
+            <p>As an Amazon Associate I earn from qualifying purchases. Some links on this site are affiliate links.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="view shell page-view" id="trendingView" data-view-panel="trending">
+      <div class="page-head">
+        <div><p class="kicker">DISCOVER</p><h2>Trending on TheReal_Dealz</h2><p>What our current monitoring system is paying attention to — not a claim about universal sales rankings.</p></div>
+      </div>
+      <div id="trendingList" class="rank-list"></div>
+    </section>
+
+    <section class="view shell page-view" id="watchlistView" data-view-panel="watchlist">
+      <div class="page-head">
+        <div><p class="kicker">WATCHLIST</p><h2>Products we’re actively watching.</h2><p>Specific products only. Current prices and availability stay on Amazon so stale numbers don’t linger here.</p></div>
+      </div>
+      <div id="watchlistGrid" class="product-grid"></div>
+    </section>
+
+    <section class="view shell page-view" id="guidesView" data-view-panel="guides">
+      <div class="page-head">
+        <div><p class="kicker">BUYING GUIDES</p><h2>Know what you’re buying.</h2><p>Practical explainers and comparisons designed to help before you click “buy.”</p></div>
+      </div>
+      <div id="guidesFeed" class="feed-stack narrow"></div>
+    </section>
+
+    <section class="view shell page-view" id="categoriesView" data-view-panel="categories">
+      <div class="page-head">
+        <div><p class="kicker">BROWSE</p><h2>Shop by interest.</h2><p>Choose a category and jump straight into a filtered feed.</p></div>
+      </div>
+      <div id="categoryGrid" class="category-grid"></div>
+    </section>
+
+    <section class="view shell page-view search-page" id="searchView" data-view-panel="search">
+      <div class="search-shell">
+        <p class="kicker">SEARCH THE FEED</p>
+        <label class="search-box" for="siteSearch">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+          <input id="siteSearch" type="search" placeholder="What are you looking for?" autocomplete="off">
+        </label>
+        <div class="search-suggestions">
+          <button data-query="AirTag">AirTags</button>
+          <button data-query="under $25">Under $25</button>
+          <button data-query="Kitchen">Kitchen</button>
+          <button data-query="Travel">Travel</button>
+          <button data-query="Smart Home">Smart Home</button>
+          <button data-query="Gift">Gift ideas</button>
+        </div>
+        <div id="searchResults" class="search-results"></div>
+      </div>
+    </section>
+
+    <section class="view shell page-view" id="savedView" data-view-panel="saved">
+      <div class="page-head">
+        <div><p class="kicker">YOUR LIST</p><h2>Saved for later.</h2><p>Saved locally on this device — no account required.</p></div>
+      </div>
+      <div id="savedContent"></div>
+    </section>
+
+    <section class="view shell page-view" id="moreView" data-view-panel="more">
+      <div class="page-head">
+        <div><p class="kicker">THE REAL DEALZ</p><h2>More</h2></div>
+      </div>
+      <div class="more-grid">
+        <button class="more-card nav-trigger" data-view="categories"><span>Browse</span><strong>Categories</strong><small>Tech, Home, Kitchen, Travel & more</small></button>
+        <a class="more-card" href="https://www.tiktok.com/@the_realdealz" target="_blank" rel="noopener"><span>Follow</span><strong>TikTok</strong><small>@the_realdealz</small></a>
+        <a class="more-card" href="https://linktr.ee/TheReal_Dealz" target="_blank" rel="noopener"><span>Links</span><strong>All The Dealz</strong><small>Open Linktree</small></a>
+        <div class="more-card static"><span>Transparency</span><strong>Affiliate disclosure</strong><small>As an Amazon Associate I earn from qualifying purchases.</small></div>
+      </div>
+      <div class="about-panel">
+        <p class="kicker">ABOUT</p>
+        <h3>We filter the internet so you don’t have to.</h3>
+        <p>TheReal_Dealz is built around useful finds, timely shopping opportunities, and honest context. Viral does not automatically mean recommended, and an affiliate relationship does not replace verification.</p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <button class="mobile-nav-item active" data-view="home">
+      <svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg><span>Home</span>
+    </button>
+    <button class="mobile-nav-item" data-view="trending">
+      <svg viewBox="0 0 24 24"><path d="M4 17 10 11l4 4 6-8"></path><path d="M15 7h5v5"></path></svg><span>Trending</span>
+    </button>
+    <button class="mobile-nav-item" data-view="search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg><span>Search</span>
+    </button>
+    <button class="mobile-nav-item" data-view="saved">
+      <svg viewBox="0 0 24 24"><path d="M20.8 4.7a5.6 5.6 0 0 0-7.9 0L12 5.6l-.9-.9a5.6 5.6 0 1 0-7.9 7.9L12 21l8.8-8.4a5.6 5.6 0 0 0 0-7.9Z"></path></svg><span>Saved</span>
+    </button>
+    <button class="mobile-nav-item" data-view="more">
+      <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"></circle><circle cx="12" cy="12" r="1.5"></circle><circle cx="19" cy="12" r="1.5"></circle></svg><span>More</span>
+    </button>
+  </nav>
+
+  <div class="post-modal" id="postModal" aria-hidden="true">
+    <button class="modal-backdrop" data-close-modal aria-label="Close post"></button>
+    <article class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" data-close-modal aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </article>
   </div>
-</section>
 
-<section id="guides" class="section shell">
-  <div class="section-head"><div><div class="eyebrow"><b>BUYING GUIDES</b></div><h2>Know what you're buying.</h2></div></div>
-  <div class="guide">
-    <div class="guide-art"><div class="cup"></div></div>
-    <div class="guide-copy"><span class="label">TRENDING GUIDE</span><h3>The at-home matcha setup: what you actually need</h3><p>A practical starter checklist for recreating the café routine without buying a counter full of gimmicks.</p><p><strong>Essential:</strong> matcha, fine sifter, wide bowl or mug, and a whisk/frother. Whisk holders, special glasses, and syrups are convenience extras.</p><a class="btn" href="#dealz">See related finds →</a></div>
-  </div>
-</section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<section id="about" class="about">
-  <div class="shell about-inner">
-    <div><div class="eyebrow">WHY THE REAL DEALZ?</div><h2>The internet has enough stuff.<br>We filter it.</h2></div>
-    <div><p>TheReal_Dealz exists to make finding worthwhile products faster. We look for products with a reason to exist — useful, timely, well matched to a real problem, or genuinely priced well.</p><p>A product being viral does not automatically make it a recommendation. Trend signals and verified product facts should stay separate, and affiliate relationships should be clearly disclosed.</p><a class="btn" href="https://linktr.ee/TheReal_Dealz" target="_blank" rel="noopener">All The Dealz ↗</a></div>
-  </div>
-</section>
-</main>
-
-<footer class="footer">
-<div class="shell footgrid">
-  <div><a class="logo" href="#top">TheReal_<em>Dealz</em></a><p>The internet's best dealz — curated.</p></div>
-  <div><strong>Explore</strong><a href="#dealz">Latest Dealz</a><a href="#guides">Buying Guides</a><a href="#categories">Categories</a></div>
-  <div><strong>Follow</strong><a href="https://www.tiktok.com/@the_realdealz" target="_blank" rel="noopener">@the_realdealz</a><a href="https://linktr.ee/TheReal_Dealz" target="_blank" rel="noopener">Linktree</a></div>
-  <div><strong>Transparency</strong><a href="#disclosure">Affiliate disclosure</a><span id="disclosure" style="font-size:11px;color:#777">As an Amazon Associate I earn from qualifying purchases.</span></div>
-</div>
-<div class="shell bottom"><span>As an Amazon Associate I earn from qualifying purchases.</span><span>© <span id="year"></span> TheReal_Dealz</span></div>
-</footer>
-
-<script>
-const SITE_BUILD="2026.09.18.8";
-const AMAZON_ASSOCIATE_TAG="therealdea0cb-20";
-const deals=[
-{art:"power",title:"Portable charging picks for everyday carry",category:"tech",badge:"BUYING GUIDE",status:"WATCHLIST",desc:"USB-C chargers and power banks will appear here after current models, specs, prices, and affiliate links are verified.",accent:"#39a8ff"},
-{art:"storage",title:"Small-space organization finds",category:"home",badge:"PROBLEM → PRODUCT",status:"WATCHLIST",desc:"Storage and organization finds selected around real small-apartment problems — not random viral clutter.",accent:"#b9ff39"},
-{art:"matcha",title:"At-home matcha setup",category:"kitchen",badge:"TREND WATCH",status:"GUIDE",desc:"Practical matcha tools: whisk, bowl, sifter, frother, storage, and the extras that are actually optional.",accent:"#d9f79a"},
-{art:"beauty",title:"Beauty finds that earn the counter space",category:"beauty",badge:"CURATED",status:"WATCHLIST",desc:"Beauty tools and staples with a clear use case instead of products chosen only because the packaging went viral.",accent:"#ff70d6"},
-{art:"prep",title:"Kitchen shortcuts that solve one annoying task",category:"kitchen",badge:"USEFUL FIND",status:"WATCHLIST",desc:"Single-purpose tools only when the convenience is worth the drawer space.",accent:"#ffd43b"},
-{art:"desk",title:"Desk and phone accessories under review",category:"tech",badge:"DEAL RADAR",status:"WATCHLIST",desc:"Chargers, stands, cable management, and compact accessories waiting for current-price verification.",accent:"#39a8ff"}];
-
-function powerSVG(){return `
-<div class="deal-illustration"><svg viewBox="0 0 160 160" aria-hidden="true">
- <g class="orbit"><circle cx="80" cy="80" r="58" fill="none" stroke="rgba(57,168,255,.18)" stroke-width="2" stroke-dasharray="6 10"/><circle cx="138" cy="80" r="5" fill="#70d7ff"/></g>
- <g class="floaty">
-  <rect x="39" y="38" width="70" height="88" rx="18" fill="#0d1117" stroke="#39a8ff" stroke-width="4"/>
-  <rect x="52" y="52" width="44" height="43" rx="9" fill="rgba(57,168,255,.12)" stroke="rgba(255,255,255,.10)"/>
-  <path d="M75 56 62 78h13l-6 20 24-29H79l8-13z" fill="#70d7ff" class="pulse"/>
-  <circle cx="53" cy="112" r="4" fill="#b9ff39"/><circle cx="65" cy="112" r="4" fill="#39a8ff"/>
-  <path d="M109 93c17 0 26 8 26 20v9" fill="none" stroke="#70d7ff" stroke-width="4" stroke-linecap="round" class="cable-flow"/>
-  <rect x="130" y="119" width="12" height="14" rx="3" fill="#70d7ff"/>
- </g>
-</svg></div>`}
-
-function storageSVG(){return `
-<div class="deal-illustration"><svg viewBox="0 0 160 160" aria-hidden="true">
- <g class="floaty">
-  <rect x="26" y="39" width="108" height="84" rx="13" fill="#101410" stroke="#b9ff39" stroke-width="4"/>
-  <line x1="80" y1="40" x2="80" y2="123" stroke="rgba(255,255,255,.15)" stroke-width="2"/>
-  <line x1="26" y1="79" x2="134" y2="79" stroke="rgba(255,255,255,.15)" stroke-width="2"/>
-  <rect x="37" y="50" width="31" height="19" rx="5" fill="rgba(185,255,57,.27)"/><path d="M43 55h18" stroke="#b9ff39" stroke-width="3" stroke-linecap="round"/>
-  <rect x="92" y="51" width="29" height="18" rx="5" fill="rgba(185,255,57,.14)"/>
-  <rect x="38" y="91" width="27" height="20" rx="5" fill="rgba(185,255,57,.16)"/>
-  <rect x="91" y="89" width="31" height="22" rx="5" fill="rgba(185,255,57,.30)"/>
- </g>
- <g class="spark"><path d="M34 28l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#b9ff39"/><circle cx="132" cy="31" r="4" fill="#b9ff39"/><circle cx="128" cy="131" r="3" fill="#8fca22"/></g>
-</svg></div>`}
-
-function matchaSVG(){return `
-<div class="deal-illustration"><svg viewBox="0 0 160 160" aria-hidden="true">
- <g class="orbit"><circle cx="80" cy="80" r="59" fill="none" stroke="rgba(217,247,154,.18)" stroke-width="2" stroke-dasharray="4 10"/></g>
- <g class="floaty">
-  <ellipse cx="76" cy="123" rx="43" ry="10" fill="rgba(0,0,0,.22)"/>
-  <path d="M46 59h62v42c0 19-14 31-31 31s-31-12-31-31z" fill="#f4f0df"/>
-  <ellipse cx="77" cy="59" rx="31" ry="11" fill="#a3d36f"/>
-  <ellipse cx="77" cy="59" rx="25" ry="7" fill="#7fb84d"/>
-  <path d="M100 39l8 4-19 52-6-3z" fill="#efd48a" class="tilt"/>
-  <path d="M39 48c7-8 15-12 25-14" fill="none" stroke="#d9f79a" stroke-width="3" stroke-linecap="round" class="pulse"/>
-  <circle cx="31" cy="50" r="4" fill="#d9f79a" class="spark"/>
- </g>
-</svg></div>`}
-
-function beautySVG(){return `
-<div class="deal-illustration"><svg viewBox="0 0 160 160" aria-hidden="true">
- <g class="floaty">
-  <ellipse cx="80" cy="126" rx="45" ry="9" fill="rgba(0,0,0,.22)"/>
-  <rect x="35" y="50" width="42" height="67" rx="12" fill="#181018" stroke="#ff70d6" stroke-width="4"/>
-  <rect x="45" y="37" width="22" height="16" rx="5" fill="#ff70d6"/>
-  <path d="M50 71h12M50 80h12" stroke="#ffd8f2" stroke-width="3" stroke-linecap="round"/>
-  <ellipse cx="112" cy="77" rx="25" ry="35" fill="#121012" stroke="#ff70d6" stroke-width="4"/>
-  <ellipse cx="112" cy="77" rx="17" ry="25" fill="rgba(255,112,214,.08)"/>
-  <path d="M94 76h36" stroke="rgba(255,216,242,.38)" stroke-width="2" class="scan"/>
- </g>
- <g class="spark"><path d="M27 42l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#ff70d6"/><path d="M135 30l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#ffd8f2"/><path d="M134 118l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#ff70d6"/></g>
-</svg></div>`}
-
-function prepSVG(){return `
-<div class="deal-illustration"><svg viewBox="0 0 160 160" aria-hidden="true">
- <g class="floaty">
-  <ellipse cx="80" cy="127" rx="43" ry="9" fill="rgba(0,0,0,.22)"/>
-  <rect x="45" y="62" width="70" height="58" rx="15" fill="#19170d" stroke="#ffd43b" stroke-width="4"/>
-  <rect x="54" y="52" width="52" height="18" rx="8" fill="#2a250c" stroke="#ffd43b" stroke-width="3"/>
-  <circle cx="80" cy="91" r="18" fill="rgba(255,212,59,.12)" stroke="#ffd43b" stroke-width="3"/>
-  <path d="M80 75v32M64 91h32M68 79l24 24M92 79 68 103" stroke="#ffd43b" stroke-width="3" stroke-linecap="round" class="pulse"/>
-  <path d="M120 50l16 16" stroke="#fff2a8" stroke-width="5" stroke-linecap="round"/><path d="M125 45l16 16" stroke="#ffd43b" stroke-width="3" stroke-linecap="round"/>
- </g>
- <circle cx="36" cy="55" r="4" fill="#ffd43b" class="spark"/><circle cx="131" cy="112" r="3" fill="#fff2a8" class="spark delay-1"/>
-</svg></div>`}
-
-function deskSVG(){return `
-<div class="deal-illustration"><svg viewBox="0 0 160 160" aria-hidden="true">
- <g class="orbit"><circle cx="80" cy="78" r="57" fill="none" stroke="rgba(57,168,255,.16)" stroke-width="2" stroke-dasharray="5 11"/><circle cx="40" cy="39" r="5" fill="#39a8ff"/></g>
- <g class="floaty">
-  <rect x="55" y="31" width="51" height="82" rx="14" fill="#0d1117" stroke="#39a8ff" stroke-width="4"/>
-  <rect x="63" y="42" width="35" height="55" rx="7" fill="rgba(57,168,255,.12)"/>
-  <path d="M48 119h66" stroke="#9be4ff" stroke-width="5" stroke-linecap="round"/>
-  <path d="M81 113v10" stroke="#9be4ff" stroke-width="5" stroke-linecap="round"/>
-  <rect x="44" y="128" width="76" height="10" rx="5" fill="#151a1d" stroke="rgba(155,228,255,.45)" stroke-width="2"/>
-  <path d="M110 56c17 0 27 9 27 23" fill="none" stroke="#70d7ff" stroke-width="4" stroke-linecap="round" class="cable-flow"/>
-  <circle cx="137" cy="84" r="5" fill="#b9ff39" class="pulse"/>
- </g>
-</svg></div>`}
-
-function artFor(d){return ({power:powerSVG,storage:storageSVG,matcha:matchaSVG,beauty:beautySVG,prep:prepSVG,desk:deskSVG}[d.art]||powerSVG)()}
-
-function render(filter="all"){
- const g=document.getElementById("dealGrid");
- g.innerHTML=deals.filter(d=>filter==="all"||d.category===filter).map(d=>`
- <article class="deal" data-category="${d.category}">
-  <div class="visual" style="--accent:${d.accent}"><span class="badge">${d.badge}</span>${artFor(d)}</div>
-  <div class="deal-body"><div class="meta"><span>${d.category}</span><span>${d.status}</span></div><h3>${d.title}</h3><p>${d.desc}</p><span class="cta">Affiliate link pending verification</span></div>
- </article>`).join("");
-}
-document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(b.dataset.filter)});
-document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("updated").textContent="UPDATED "+new Date().toLocaleDateString(undefined,{month:"short",day:"numeric"}).toUpperCase()+" • V8";
-render();
-</script>
+  <script src="data/posts.js?v=20260918-20"></script>
+  <script src="app.js?v=20260918-20"></script>
 </body>
 </html>
