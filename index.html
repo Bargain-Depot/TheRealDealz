@@ -7,7 +7,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="therealdealz-build" content="2026.09.18.4">
+<meta name="therealdealz-build" content="2026.09.18.5">
 <meta name="description" content="TheReal_Dealz — curated Amazon finds, useful products, and buying guides.">
 <title>TheReal_Dealz — The Internet's Best Dealz, Curated</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -111,7 +111,8 @@ h1,h2{font-family:"Archivo Black",Impact,sans-serif;line-height:.98;letter-spaci
 </footer>
 
 <script>
-const SITE_BUILD="2026.09.18.4";
+const SITE_BUILD="2026.09.18.5";
+const AMAZON_ASSOCIATE_TAG="therealdea0cb-20";
 const deals=[
 {art:"power",title:"Portable charging picks for everyday carry",category:"tech",badge:"BUYING GUIDE",status:"WATCHLIST",desc:"USB-C chargers and power banks will appear here after current models, specs, prices, and affiliate links are verified.",accent:"#39a8ff"},
 {art:"storage",title:"Small-space organization finds",category:"home",badge:"PROBLEM → PRODUCT",status:"WATCHLIST",desc:"Storage and organization finds selected around real small-apartment problems — not random viral clutter.",accent:"#b9ff39"},
@@ -214,7 +215,7 @@ function render(filter="all"){
 }
 document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(b.dataset.filter)});
 document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("updated").textContent="UPDATED "+new Date().toLocaleDateString(undefined,{month:"short",day:"numeric"}).toUpperCase()+" • V4";
+document.getElementById("updated").textContent="UPDATED "+new Date().toLocaleDateString(undefined,{month:"short",day:"numeric"}).toUpperCase()+" • V5";
 render();
 </script>
 </body>
