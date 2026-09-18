@@ -1,7 +1,7 @@
 (() => {
   const TAG = "therealdea0cb-20";
   const amazonLink = asin => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=${TAG}`;
-  const amazonImage = asin => `https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=${asin}&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL500_&tag=${TAG}`;
+  const amazonImage = asin => `https://images-na.ssl-images-amazon.com/images/P/${asin}.01.LZZZZZZZ.jpg`;
 
   const products = {
     blink: {
