@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050505">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="therealdealz-build" content="2026.09.18.4">
 <meta name="description" content="TheReal_Dealz — curated Amazon finds, useful products, and buying guides.">
 <title>TheReal_Dealz — The Internet's Best Dealz, Curated</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +29,10 @@ h1,h2{font-family:"Archivo Black",Impact,sans-serif;line-height:.98;letter-spaci
 .ticker{border-block:1px solid #222;background:#090909;overflow:hidden;padding:14px 0}.ticker div{display:flex;gap:25px;white-space:nowrap;width:max-content;font:12px "Archivo Black";letter-spacing:.08em;color:#777;animation:move 26s linear infinite}.ticker b{color:var(--green)}@keyframes move{to{transform:translateX(-50%)}}
 .section{padding:82px 0}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:25px}.section h2{font-size:clamp(34px,5vw,59px)}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{border:1px solid #252525;background:#101010;color:#888;border-radius:99px;padding:8px 12px;font-size:11px;font-weight:900;cursor:pointer}.filter.active,.filter:hover{background:var(--green);color:#080808;border-color:var(--green)}
 .disclosure{font-size:11px;color:#888;background:#0d0d0d;border:1px solid #202020;border-left:3px solid var(--green);padding:10px 12px;border-radius:10px;margin-bottom:18px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.deal{border:1px solid #202020;background:#0d0d0d;border-radius:21px;overflow:hidden;transition:.2s ease}.deal:hover{transform:translateY(-4px);border-color:#3a3a3a}.visual{height:205px;display:grid;place-items:center;position:relative;background:linear-gradient(140deg,#151515,#0a0a0a);overflow:hidden}.visual:after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:var(--accent);filter:blur(85px);opacity:.12}.icon{z-index:1;width:112px;height:112px;border-radius:25px;border:1px solid #353535;background:#171717;display:grid;place-items:center;font:32px "Archivo Black";color:var(--accent);transform:rotate(-5deg);box-shadow:0 20px 32px rgba(0,0,0,.25)}.badge{position:absolute;left:12px;top:12px;z-index:2;border:1px solid #292929;background:#080808;border-radius:99px;padding:6px 8px;font-size:9px;font-weight:900;letter-spacing:.08em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.deal{border:1px solid #202020;background:#0d0d0d;border-radius:21px;overflow:hidden;transition:.2s ease}.deal:hover{transform:translateY(-4px);border-color:#3a3a3a}.visual{height:205px;display:grid;place-items:center;position:relative;background:linear-gradient(140deg,#151515,#0a0a0a);overflow:hidden}.visual:after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:var(--accent);filter:blur(85px);opacity:.12}.deal-illustration{position:relative;z-index:1;width:138px;height:138px;display:grid;place-items:center;filter:drop-shadow(0 18px 28px rgba(0,0,0,.30))}
+.deal-illustration svg{width:100%;height:100%;overflow:visible}
+.floaty{animation:floatY 3.5s ease-in-out infinite}.pulse{animation:pulseGlow 2.8s ease-in-out infinite}.orbit{animation:spinSlow 10s linear infinite;transform-origin:center}.spark{animation:flicker 2s ease-in-out infinite}.tilt{animation:tilt 4s ease-in-out infinite;transform-origin:center}.cable-flow{stroke-dasharray:7 9;animation:cableFlow 2s linear infinite}.scan{animation:scan 2.6s ease-in-out infinite}.delay-1{animation-delay:.4s}.delay-2{animation-delay:.8s}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes pulseGlow{0%,100%{opacity:.78;transform:scale(1)}50%{opacity:1;transform:scale(1.07)}}@keyframes spinSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@keyframes flicker{0%,100%{opacity:.48}50%{opacity:1}}@keyframes tilt{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(4deg)}}@keyframes cableFlow{to{stroke-dashoffset:-32}}@keyframes scan{0%,100%{transform:translateY(-8px);opacity:.35}50%{transform:translateY(10px);opacity:.9}}.badge{position:absolute;left:12px;top:12px;z-index:2;border:1px solid #292929;background:#080808;border-radius:99px;padding:6px 8px;font-size:9px;font-weight:900;letter-spacing:.08em}
 .deal-body{padding:17px}.meta{display:flex;justify-content:space-between;color:#777;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.05em}.deal h3{font-size:19px;line-height:1.12;letter-spacing:-.03em;margin:10px 0 7px}.deal p{font-size:12px;color:#888;margin:0 0 16px}.deal .cta{display:block;text-align:center;border-radius:10px;padding:10px;background:#171717;border:1px solid #262626;color:#aaa;font-size:11px;font-weight:900}
 .categories{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.cat{min-height:195px;border:1px solid #222;border-radius:21px;background:#101010;padding:19px;display:flex;flex-direction:column;position:relative;overflow:hidden}.cat:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-60px;bottom:-70px;background:var(--accent);filter:blur(35px);opacity:.15}.cat small{font-size:10px;color:#666;font-weight:800}.cat strong{font:27px "Archivo Black";margin-top:auto}.cat span{font-size:11px;color:#777}
 .guide{display:grid;grid-template-columns:1fr 1.1fr;border:1px solid #252525;background:#0e0e0e;border-radius:25px;overflow:hidden}.guide-art{min-height:370px;background:#d9f79a;position:relative;display:grid;place-items:center}.guide-art:before{content:"";width:290px;height:290px;border:2px dashed rgba(0,0,0,.12);border-radius:50%;position:absolute}.cup{width:150px;height:175px;position:relative;transform:rotate(7deg)}.cup:before{content:"";position:absolute;left:15px;bottom:15px;width:120px;height:140px;background:#f2efdf;border-radius:18px 18px 48px 48px;box-shadow:0 20px 25px rgba(0,0,0,.12)}.cup:after{content:"";position:absolute;left:15px;top:21px;width:120px;height:35px;border-radius:50%;background:#8fc45c;border:7px solid #f2efdf;box-sizing:border-box}.guide-copy{padding:36px;display:flex;flex-direction:column;justify-content:center}.guide-copy h3{font:34px/1.02 "Archivo Black";letter-spacing:-.045em;margin:9px 0 13px}.guide-copy p{color:#888;font-size:14px}.guide-copy .label{font-size:10px;font-weight:900;letter-spacing:.12em;color:var(--green)}
@@ -104,25 +111,110 @@ h1,h2{font-family:"Archivo Black",Impact,sans-serif;line-height:.98;letter-spaci
 </footer>
 
 <script>
+const SITE_BUILD="2026.09.18.4";
 const deals=[
-{title:"Portable charging picks for everyday carry",category:"tech",badge:"BUYING GUIDE",status:"WATCHLIST",desc:"USB-C chargers and power banks will appear here after current models, specs, prices, and affiliate links are verified.",icon:"⚡",accent:"#39a8ff"},
-{title:"Small-space organization finds",category:"home",badge:"PROBLEM → PRODUCT",status:"WATCHLIST",desc:"Storage and organization finds selected around real small-apartment problems — not random viral clutter.",icon:"⌂",accent:"#b9ff39"},
-{title:"At-home matcha setup",category:"kitchen",badge:"TREND WATCH",status:"GUIDE",desc:"Practical matcha tools: whisk, bowl, sifter, frother, storage, and the extras that are actually optional.",icon:"M",accent:"#d9f79a"},
-{title:"Beauty finds that earn the counter space",category:"beauty",badge:"CURATED",status:"WATCHLIST",desc:"Beauty tools and staples with a clear use case instead of products chosen only because the packaging went viral.",icon:"✦",accent:"#ff70d6"},
-{title:"Kitchen shortcuts that solve one annoying task",category:"kitchen",badge:"USEFUL FIND",status:"WATCHLIST",desc:"Single-purpose tools only when the convenience is worth the drawer space.",icon:"K",accent:"#ffd43b"},
-{title:"Desk and phone accessories under review",category:"tech",badge:"DEAL RADAR",status:"WATCHLIST",desc:"Chargers, stands, cable management, and compact accessories waiting for current-price verification.",icon:"+",accent:"#39a8ff"}];
+{art:"power",title:"Portable charging picks for everyday carry",category:"tech",badge:"BUYING GUIDE",status:"WATCHLIST",desc:"USB-C chargers and power banks will appear here after current models, specs, prices, and affiliate links are verified.",accent:"#39a8ff"},
+{art:"storage",title:"Small-space organization finds",category:"home",badge:"PROBLEM → PRODUCT",status:"WATCHLIST",desc:"Storage and organization finds selected around real small-apartment problems — not random viral clutter.",accent:"#b9ff39"},
+{art:"matcha",title:"At-home matcha setup",category:"kitchen",badge:"TREND WATCH",status:"GUIDE",desc:"Practical matcha tools: whisk, bowl, sifter, frother, storage, and the extras that are actually optional.",accent:"#d9f79a"},
+{art:"beauty",title:"Beauty finds that earn the counter space",category:"beauty",badge:"CURATED",status:"WATCHLIST",desc:"Beauty tools and staples with a clear use case instead of products chosen only because the packaging went viral.",accent:"#ff70d6"},
+{art:"prep",title:"Kitchen shortcuts that solve one annoying task",category:"kitchen",badge:"USEFUL FIND",status:"WATCHLIST",desc:"Single-purpose tools only when the convenience is worth the drawer space.",accent:"#ffd43b"},
+{art:"desk",title:"Desk and phone accessories under review",category:"tech",badge:"DEAL RADAR",status:"WATCHLIST",desc:"Chargers, stands, cable management, and compact accessories waiting for current-price verification.",accent:"#39a8ff"}];
+
+function powerSVG(){return `
+<div class="deal-illustration"><svg viewBox="0 0 160 160" aria-hidden="true">
+ <g class="orbit"><circle cx="80" cy="80" r="58" fill="none" stroke="rgba(57,168,255,.18)" stroke-width="2" stroke-dasharray="6 10"/><circle cx="138" cy="80" r="5" fill="#70d7ff"/></g>
+ <g class="floaty">
+  <rect x="39" y="38" width="70" height="88" rx="18" fill="#0d1117" stroke="#39a8ff" stroke-width="4"/>
+  <rect x="52" y="52" width="44" height="43" rx="9" fill="rgba(57,168,255,.12)" stroke="rgba(255,255,255,.10)"/>
+  <path d="M75 56 62 78h13l-6 20 24-29H79l8-13z" fill="#70d7ff" class="pulse"/>
+  <circle cx="53" cy="112" r="4" fill="#b9ff39"/><circle cx="65" cy="112" r="4" fill="#39a8ff"/>
+  <path d="M109 93c17 0 26 8 26 20v9" fill="none" stroke="#70d7ff" stroke-width="4" stroke-linecap="round" class="cable-flow"/>
+  <rect x="130" y="119" width="12" height="14" rx="3" fill="#70d7ff"/>
+ </g>
+</svg></div>`}
+
+function storageSVG(){return `
+<div class="deal-illustration"><svg viewBox="0 0 160 160" aria-hidden="true">
+ <g class="floaty">
+  <rect x="26" y="39" width="108" height="84" rx="13" fill="#101410" stroke="#b9ff39" stroke-width="4"/>
+  <line x1="80" y1="40" x2="80" y2="123" stroke="rgba(255,255,255,.15)" stroke-width="2"/>
+  <line x1="26" y1="79" x2="134" y2="79" stroke="rgba(255,255,255,.15)" stroke-width="2"/>
+  <rect x="37" y="50" width="31" height="19" rx="5" fill="rgba(185,255,57,.27)"/><path d="M43 55h18" stroke="#b9ff39" stroke-width="3" stroke-linecap="round"/>
+  <rect x="92" y="51" width="29" height="18" rx="5" fill="rgba(185,255,57,.14)"/>
+  <rect x="38" y="91" width="27" height="20" rx="5" fill="rgba(185,255,57,.16)"/>
+  <rect x="91" y="89" width="31" height="22" rx="5" fill="rgba(185,255,57,.30)"/>
+ </g>
+ <g class="spark"><path d="M34 28l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#b9ff39"/><circle cx="132" cy="31" r="4" fill="#b9ff39"/><circle cx="128" cy="131" r="3" fill="#8fca22"/></g>
+</svg></div>`}
+
+function matchaSVG(){return `
+<div class="deal-illustration"><svg viewBox="0 0 160 160" aria-hidden="true">
+ <g class="orbit"><circle cx="80" cy="80" r="59" fill="none" stroke="rgba(217,247,154,.18)" stroke-width="2" stroke-dasharray="4 10"/></g>
+ <g class="floaty">
+  <ellipse cx="76" cy="123" rx="43" ry="10" fill="rgba(0,0,0,.22)"/>
+  <path d="M46 59h62v42c0 19-14 31-31 31s-31-12-31-31z" fill="#f4f0df"/>
+  <ellipse cx="77" cy="59" rx="31" ry="11" fill="#a3d36f"/>
+  <ellipse cx="77" cy="59" rx="25" ry="7" fill="#7fb84d"/>
+  <path d="M100 39l8 4-19 52-6-3z" fill="#efd48a" class="tilt"/>
+  <path d="M39 48c7-8 15-12 25-14" fill="none" stroke="#d9f79a" stroke-width="3" stroke-linecap="round" class="pulse"/>
+  <circle cx="31" cy="50" r="4" fill="#d9f79a" class="spark"/>
+ </g>
+</svg></div>`}
+
+function beautySVG(){return `
+<div class="deal-illustration"><svg viewBox="0 0 160 160" aria-hidden="true">
+ <g class="floaty">
+  <ellipse cx="80" cy="126" rx="45" ry="9" fill="rgba(0,0,0,.22)"/>
+  <rect x="35" y="50" width="42" height="67" rx="12" fill="#181018" stroke="#ff70d6" stroke-width="4"/>
+  <rect x="45" y="37" width="22" height="16" rx="5" fill="#ff70d6"/>
+  <path d="M50 71h12M50 80h12" stroke="#ffd8f2" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="112" cy="77" rx="25" ry="35" fill="#121012" stroke="#ff70d6" stroke-width="4"/>
+  <ellipse cx="112" cy="77" rx="17" ry="25" fill="rgba(255,112,214,.08)"/>
+  <path d="M94 76h36" stroke="rgba(255,216,242,.38)" stroke-width="2" class="scan"/>
+ </g>
+ <g class="spark"><path d="M27 42l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#ff70d6"/><path d="M135 30l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#ffd8f2"/><path d="M134 118l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#ff70d6"/></g>
+</svg></div>`}
+
+function prepSVG(){return `
+<div class="deal-illustration"><svg viewBox="0 0 160 160" aria-hidden="true">
+ <g class="floaty">
+  <ellipse cx="80" cy="127" rx="43" ry="9" fill="rgba(0,0,0,.22)"/>
+  <rect x="45" y="62" width="70" height="58" rx="15" fill="#19170d" stroke="#ffd43b" stroke-width="4"/>
+  <rect x="54" y="52" width="52" height="18" rx="8" fill="#2a250c" stroke="#ffd43b" stroke-width="3"/>
+  <circle cx="80" cy="91" r="18" fill="rgba(255,212,59,.12)" stroke="#ffd43b" stroke-width="3"/>
+  <path d="M80 75v32M64 91h32M68 79l24 24M92 79 68 103" stroke="#ffd43b" stroke-width="3" stroke-linecap="round" class="pulse"/>
+  <path d="M120 50l16 16" stroke="#fff2a8" stroke-width="5" stroke-linecap="round"/><path d="M125 45l16 16" stroke="#ffd43b" stroke-width="3" stroke-linecap="round"/>
+ </g>
+ <circle cx="36" cy="55" r="4" fill="#ffd43b" class="spark"/><circle cx="131" cy="112" r="3" fill="#fff2a8" class="spark delay-1"/>
+</svg></div>`}
+
+function deskSVG(){return `
+<div class="deal-illustration"><svg viewBox="0 0 160 160" aria-hidden="true">
+ <g class="orbit"><circle cx="80" cy="78" r="57" fill="none" stroke="rgba(57,168,255,.16)" stroke-width="2" stroke-dasharray="5 11"/><circle cx="40" cy="39" r="5" fill="#39a8ff"/></g>
+ <g class="floaty">
+  <rect x="55" y="31" width="51" height="82" rx="14" fill="#0d1117" stroke="#39a8ff" stroke-width="4"/>
+  <rect x="63" y="42" width="35" height="55" rx="7" fill="rgba(57,168,255,.12)"/>
+  <path d="M48 119h66" stroke="#9be4ff" stroke-width="5" stroke-linecap="round"/>
+  <path d="M81 113v10" stroke="#9be4ff" stroke-width="5" stroke-linecap="round"/>
+  <rect x="44" y="128" width="76" height="10" rx="5" fill="#151a1d" stroke="rgba(155,228,255,.45)" stroke-width="2"/>
+  <path d="M110 56c17 0 27 9 27 23" fill="none" stroke="#70d7ff" stroke-width="4" stroke-linecap="round" class="cable-flow"/>
+  <circle cx="137" cy="84" r="5" fill="#b9ff39" class="pulse"/>
+ </g>
+</svg></div>`}
+
+function artFor(d){return ({power:powerSVG,storage:storageSVG,matcha:matchaSVG,beauty:beautySVG,prep:prepSVG,desk:deskSVG}[d.art]||powerSVG)()}
 
 function render(filter="all"){
  const g=document.getElementById("dealGrid");
  g.innerHTML=deals.filter(d=>filter==="all"||d.category===filter).map(d=>`
  <article class="deal" data-category="${d.category}">
-  <div class="visual" style="--accent:${d.accent}"><span class="badge">${d.badge}</span><div class="icon">${d.icon}</div></div>
+  <div class="visual" style="--accent:${d.accent}"><span class="badge">${d.badge}</span>${artFor(d)}</div>
   <div class="deal-body"><div class="meta"><span>${d.category}</span><span>${d.status}</span></div><h3>${d.title}</h3><p>${d.desc}</p><span class="cta">Affiliate link pending verification</span></div>
  </article>`).join("");
 }
 document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(b.dataset.filter)});
 document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("updated").textContent="UPDATED "+new Date().toLocaleDateString(undefined,{month:"short",day:"numeric"}).toUpperCase();
+document.getElementById("updated").textContent="UPDATED "+new Date().toLocaleDateString(undefined,{month:"short",day:"numeric"}).toUpperCase()+" • V4";
 render();
 </script>
 </body>
