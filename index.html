@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="TheReal_Dealz — curated Amazon finds, useful products, and buying guides.">
+<title>TheReal_Dealz — The Internet's Best Dealz, Curated</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050505;--panel:#0e0e0e;--panel2:#151515;--text:#f8f8f2;--muted:#8f8f89;--green:#b9ff39;--blue:#39a8ff;--red:#ff3c4a;--yellow:#ffd43b;--border:#252525}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow-x:hidden}a{color:inherit;text-decoration:none}.shell{width:min(1160px,calc(100% - 32px));margin:auto}
+.topbar{background:var(--green);color:#080808;text-align:center;padding:9px 16px;font-size:12px;font-weight:900;letter-spacing:.03em}
+.header{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.logo{font:27px "Archivo Black",Impact,sans-serif;letter-spacing:-1.7px}.logo em{font-style:italic;color:var(--green);text-shadow:2px 2px 0 rgba(57,168,255,.4)}.logo i{color:var(--red);font-style:normal;font-size:14px;margin-left:6px}
+.nav{display:flex;gap:26px;font-size:13px;font-weight:800;color:#bbb}.nav a:hover{color:var(--green)}.tiktok{border:1px solid var(--border);padding:10px 14px;border-radius:999px;font-size:12px;font-weight:900;background:#111}
+.hero{min-height:620px;display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center;padding:75px 0 68px}.eyebrow{font-size:11px;font-weight:900;letter-spacing:.17em;color:#aaa;margin-bottom:14px}.eyebrow b{color:var(--green)}
+h1,h2{font-family:"Archivo Black",Impact,sans-serif;line-height:.98;letter-spacing:-.055em;margin:0}h1{font-size:clamp(50px,7.7vw,94px)}h1 em{display:block;color:var(--green);font-style:italic;text-shadow:3px 3px 0 rgba(57,168,255,.18)}
+.hero p{color:#aaa;font-size:18px;max-width:630px;margin:26px 0}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;padding:13px 18px;border-radius:12px;font-weight:900;font-size:13px;border:1px solid var(--border);background:#111}.btn.primary{background:var(--green);color:#080808;border-color:var(--green)}.trust{display:flex;gap:15px;flex-wrap:wrap;color:#777;font-size:11px;font-weight:800;margin-top:22px}
+.radar-card{border:1px solid var(--border);border-radius:28px;background:linear-gradient(180deg,#121212,#0a0a0a);padding:18px;box-shadow:0 25px 70px rgba(0,0,0,.35);transform:rotate(1.2deg)}.radar-top{display:flex;justify-content:space-between;font-size:10px;font-weight:900;color:#777}.live{color:white;border:1px solid #2d2d2d;background:#151515;border-radius:99px;padding:7px 9px}.live:before{content:"";display:inline-block;width:7px;height:7px;background:var(--green);border-radius:50%;margin-right:6px;box-shadow:0 0 12px var(--green)}
+.radar{aspect-ratio:1;max-width:325px;margin:22px auto;border-radius:50%;position:relative;overflow:hidden;background:radial-gradient(circle,#151b0b 0 8%,#090c06 9% 100%);border:1px solid #283019}.radar:before,.radar:after{content:"";position:absolute;background:rgba(185,255,57,.13)}.radar:before{width:1px;height:100%;left:50%}.radar:after{height:1px;width:100%;top:50%}.ring{position:absolute;border:1px solid rgba(185,255,57,.18);border-radius:50%;inset:14%}.ring.r2{inset:28%}.ring.r3{inset:41%}.sweep{position:absolute;inset:0;background:conic-gradient(from 0deg,transparent 0 76%,rgba(185,255,57,.05) 84%,rgba(185,255,57,.28) 99%,transparent 100%);animation:spin 5s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.radar-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#050505;font:30px "Archivo Black"}
+.radar-copy{border:1px solid #222;background:#0d0d0d;border-radius:17px;padding:15px}.radar-copy strong{display:block;font-size:15px}.radar-copy span{display:block;color:#777;font-size:12px;margin-top:4px}
+.ticker{border-block:1px solid #222;background:#090909;overflow:hidden;padding:14px 0}.ticker div{display:flex;gap:25px;white-space:nowrap;width:max-content;font:12px "Archivo Black";letter-spacing:.08em;color:#777;animation:move 26s linear infinite}.ticker b{color:var(--green)}@keyframes move{to{transform:translateX(-50%)}}
+.section{padding:82px 0}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:25px}.section h2{font-size:clamp(34px,5vw,59px)}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{border:1px solid #252525;background:#101010;color:#888;border-radius:99px;padding:8px 12px;font-size:11px;font-weight:900;cursor:pointer}.filter.active,.filter:hover{background:var(--green);color:#080808;border-color:var(--green)}
+.disclosure{font-size:11px;color:#888;background:#0d0d0d;border:1px solid #202020;border-left:3px solid var(--green);padding:10px 12px;border-radius:10px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.deal{border:1px solid #202020;background:#0d0d0d;border-radius:21px;overflow:hidden;transition:.2s ease}.deal:hover{transform:translateY(-4px);border-color:#3a3a3a}.visual{height:205px;display:grid;place-items:center;position:relative;background:linear-gradient(140deg,#151515,#0a0a0a);overflow:hidden}.visual:after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:var(--accent);filter:blur(85px);opacity:.12}.icon{z-index:1;width:112px;height:112px;border-radius:25px;border:1px solid #353535;background:#171717;display:grid;place-items:center;font:32px "Archivo Black";color:var(--accent);transform:rotate(-5deg);box-shadow:0 20px 32px rgba(0,0,0,.25)}.badge{position:absolute;left:12px;top:12px;z-index:2;border:1px solid #292929;background:#080808;border-radius:99px;padding:6px 8px;font-size:9px;font-weight:900;letter-spacing:.08em}
+.deal-body{padding:17px}.meta{display:flex;justify-content:space-between;color:#777;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.05em}.deal h3{font-size:19px;line-height:1.12;letter-spacing:-.03em;margin:10px 0 7px}.deal p{font-size:12px;color:#888;margin:0 0 16px}.deal .cta{display:block;text-align:center;border-radius:10px;padding:10px;background:#171717;border:1px solid #262626;color:#aaa;font-size:11px;font-weight:900}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.cat{min-height:195px;border:1px solid #222;border-radius:21px;background:#101010;padding:19px;display:flex;flex-direction:column;position:relative;overflow:hidden}.cat:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-60px;bottom:-70px;background:var(--accent);filter:blur(35px);opacity:.15}.cat small{font-size:10px;color:#666;font-weight:800}.cat strong{font:27px "Archivo Black";margin-top:auto}.cat span{font-size:11px;color:#777}
+.guide{display:grid;grid-template-columns:1fr 1.1fr;border:1px solid #252525;background:#0e0e0e;border-radius:25px;overflow:hidden}.guide-art{min-height:370px;background:#d9f79a;position:relative;display:grid;place-items:center}.guide-art:before{content:"";width:290px;height:290px;border:2px dashed rgba(0,0,0,.12);border-radius:50%;position:absolute}.cup{width:150px;height:175px;position:relative;transform:rotate(7deg)}.cup:before{content:"";position:absolute;left:15px;bottom:15px;width:120px;height:140px;background:#f2efdf;border-radius:18px 18px 48px 48px;box-shadow:0 20px 25px rgba(0,0,0,.12)}.cup:after{content:"";position:absolute;left:15px;top:21px;width:120px;height:35px;border-radius:50%;background:#8fc45c;border:7px solid #f2efdf;box-sizing:border-box}.guide-copy{padding:36px;display:flex;flex-direction:column;justify-content:center}.guide-copy h3{font:34px/1.02 "Archivo Black";letter-spacing:-.045em;margin:9px 0 13px}.guide-copy p{color:#888;font-size:14px}.guide-copy .label{font-size:10px;font-weight:900;letter-spacing:.12em;color:var(--green)}
+.about{background:var(--green);color:#080808;padding:72px 0}.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:70px}.about h2{font-size:clamp(36px,5vw,60px)}.about p{opacity:.76}.about .btn{background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.2);color:#080808}
+.footer{padding:48px 0 20px;border-top:1px solid #222}.footgrid{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:30px}.footgrid div{display:flex;flex-direction:column;gap:8px}.footgrid a,.footgrid p{font-size:11px;color:#777}.footgrid strong{font-size:11px}.bottom{border-top:1px solid #1d1d1d;margin-top:32px;padding-top:15px;display:flex;justify-content:space-between;gap:20px;color:#555;font-size:10px}
+@media(max-width:850px){.nav{display:none}.hero{grid-template-columns:1fr}.radar-card{max-width:520px;transform:none}.grid{grid-template-columns:1fr 1fr}.categories{grid-template-columns:1fr 1fr}.guide{grid-template-columns:1fr}.about-inner{grid-template-columns:1fr}.footgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.header{height:72px}.logo{font-size:23px}.tiktok{font-size:10px}.hero{min-height:auto;padding:50px 0 46px;gap:32px}h1{font-size:50px}.hero p{font-size:15px}.section{padding:61px 0}.section-head{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.categories{grid-template-columns:1fr 1fr}.cat{min-height:160px}.guide-art{min-height:285px}.guide-copy{padding:24px}.guide-copy h3{font-size:29px}.footgrid{grid-template-columns:1fr 1fr}.footgrid>div:first-child{grid-column:1/-1}.bottom{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="topbar">⭐ FRESH FINDS • NO ENDLESS SCROLLING • REAL DEALZ ⭐</div>
+<header class="header shell">
+  <a class="logo" href="#top">TheReal_<em>Dealz</em><i>●</i></a>
+  <nav class="nav"><a href="#dealz">Dealz</a><a href="#guides">Guides</a><a href="#categories">Categories</a><a href="#about">About</a></nav>
+  <a class="tiktok" href="https://www.tiktok.com/@the_realdealz" target="_blank" rel="noopener">TikTok ↗</a>
+</header>
+
+<main id="top">
+<section class="hero shell">
+  <div>
+    <div class="eyebrow"><b>THE REAL DEALZ</b> • CURATED SHOPPING</div>
+    <h1>Stop scrolling.<em>We found the good stuff.</em></h1>
+    <p>Useful finds, price-worthy picks, and buying guides selected for people who want the deal — not the noise.</p>
+    <div class="actions"><a class="btn primary" href="#dealz">Shop the latest dealz</a><a class="btn" href="#guides">Read buying guides</a></div>
+    <div class="trust"><span>✓ Curated picks</span><span>✓ No fake urgency</span><span>✓ Clear affiliate disclosure</span></div>
+  </div>
+  <aside class="radar-card">
+    <div class="radar-top"><span class="live">DEAL RADAR</span><span id="updated">UPDATED TODAY</span></div>
+    <div class="radar"><div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div><div class="sweep"></div><div class="radar-center">%</div></div>
+    <div class="radar-copy"><strong>We watch the trends so you don't have to.</strong><span>Search + shopping + social signals → useful finds.</span></div>
+  </aside>
+</section>
+
+<div class="ticker"><div><span>TECH FINDS</span><b>✦</b><span>HOME UPGRADES</span><b>✦</b><span>UNDER $25</span><b>✦</b><span>KITCHEN</span><b>✦</b><span>BEAUTY</span><b>✦</b><span>SEASONAL</span><b>✦</b><span>TECH FINDS</span><b>✦</b><span>HOME UPGRADES</span><b>✦</b><span>UNDER $25</span><b>✦</b><span>KITCHEN</span><b>✦</b></div></div>
+
+<section id="dealz" class="section shell">
+  <div class="section-head"><div><div class="eyebrow"><b>TRENDING NOW</b></div><h2>Dealz worth knowing about.</h2></div><div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="tech">Tech</button><button class="filter" data-filter="home">Home</button><button class="filter" data-filter="kitchen">Kitchen</button><button class="filter" data-filter="beauty">Beauty</button></div></div>
+  <div class="disclosure"><strong>Heads up:</strong> Some links may be affiliate links. If you buy through them, TheReal_Dealz may earn a commission at no extra cost to you.</div>
+  <div class="grid" id="dealGrid"></div>
+</section>
+
+<section id="categories" class="section shell">
+  <div class="eyebrow"><b>SHOP SMARTER</b></div><h2 style="margin-bottom:24px">Pick your rabbit hole.</h2>
+  <div class="categories">
+    <a class="cat" style="--accent:var(--blue)" href="#dealz"><small>01</small><strong>Tech</strong><span>chargers • accessories • smart finds</span></a>
+    <a class="cat" style="--accent:var(--green)" href="#dealz"><small>02</small><strong>Home</strong><span>organization • comfort • upgrades</span></a>
+    <a class="cat" style="--accent:var(--yellow)" href="#dealz"><small>03</small><strong>Kitchen</strong><span>tools • coffee • prep shortcuts</span></a>
+    <a class="cat" style="--accent:#ff70d6" href="#dealz"><small>04</small><strong>Beauty</strong><span>viral finds • practical staples</span></a>
+  </div>
+</section>
+
+<section id="guides" class="section shell">
+  <div class="section-head"><div><div class="eyebrow"><b>BUYING GUIDES</b></div><h2>Know what you're buying.</h2></div></div>
+  <div class="guide">
+    <div class="guide-art"><div class="cup"></div></div>
+    <div class="guide-copy"><span class="label">TRENDING GUIDE</span><h3>The at-home matcha setup: what you actually need</h3><p>A practical starter checklist for recreating the café routine without buying a counter full of gimmicks.</p><p><strong>Essential:</strong> matcha, fine sifter, wide bowl or mug, and a whisk/frother. Whisk holders, special glasses, and syrups are convenience extras.</p><a class="btn" href="#dealz">See related finds →</a></div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="shell about-inner">
+    <div><div class="eyebrow">WHY THE REAL DEALZ?</div><h2>The internet has enough stuff.<br>We filter it.</h2></div>
+    <div><p>TheReal_Dealz exists to make finding worthwhile products faster. We look for products with a reason to exist — useful, timely, well matched to a real problem, or genuinely priced well.</p><p>A product being viral does not automatically make it a recommendation. Trend signals and verified product facts should stay separate, and affiliate relationships should be clearly disclosed.</p><a class="btn" href="https://linktr.ee/TheReal_Dealz" target="_blank" rel="noopener">All The Dealz ↗</a></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+<div class="shell footgrid">
+  <div><a class="logo" href="#top">TheReal_<em>Dealz</em></a><p>The internet's best dealz — curated.</p></div>
+  <div><strong>Explore</strong><a href="#dealz">Latest Dealz</a><a href="#guides">Buying Guides</a><a href="#categories">Categories</a></div>
+  <div><strong>Follow</strong><a href="https://www.tiktok.com/@the_realdealz" target="_blank" rel="noopener">@the_realdealz</a><a href="https://linktr.ee/TheReal_Dealz" target="_blank" rel="noopener">Linktree</a></div>
+  <div><strong>Transparency</strong><a href="#disclosure">Affiliate disclosure</a><span id="disclosure" style="font-size:11px;color:#777">As an Amazon Associate I earn from qualifying purchases.</span></div>
+</div>
+<div class="shell bottom"><span>As an Amazon Associate I earn from qualifying purchases.</span><span>© <span id="year"></span> TheReal_Dealz</span></div>
+</footer>
+
+<script>
+const deals=[
+{title:"Portable charging picks for everyday carry",category:"tech",badge:"BUYING GUIDE",status:"WATCHLIST",desc:"USB-C chargers and power banks will appear here after current models, specs, prices, and affiliate links are verified.",icon:"⚡",accent:"#39a8ff"},
+{title:"Small-space organization finds",category:"home",badge:"PROBLEM → PRODUCT",status:"WATCHLIST",desc:"Storage and organization finds selected around real small-apartment problems — not random viral clutter.",icon:"⌂",accent:"#b9ff39"},
+{title:"At-home matcha setup",category:"kitchen",badge:"TREND WATCH",status:"GUIDE",desc:"Practical matcha tools: whisk, bowl, sifter, frother, storage, and the extras that are actually optional.",icon:"M",accent:"#d9f79a"},
+{title:"Beauty finds that earn the counter space",category:"beauty",badge:"CURATED",status:"WATCHLIST",desc:"Beauty tools and staples with a clear use case instead of products chosen only because the packaging went viral.",icon:"✦",accent:"#ff70d6"},
+{title:"Kitchen shortcuts that solve one annoying task",category:"kitchen",badge:"USEFUL FIND",status:"WATCHLIST",desc:"Single-purpose tools only when the convenience is worth the drawer space.",icon:"K",accent:"#ffd43b"},
+{title:"Desk and phone accessories under review",category:"tech",badge:"DEAL RADAR",status:"WATCHLIST",desc:"Chargers, stands, cable management, and compact accessories waiting for current-price verification.",icon:"+",accent:"#39a8ff"}];
+
+function render(filter="all"){
+ const g=document.getElementById("dealGrid");
+ g.innerHTML=deals.filter(d=>filter==="all"||d.category===filter).map(d=>`
+ <article class="deal" data-category="${d.category}">
+  <div class="visual" style="--accent:${d.accent}"><span class="badge">${d.badge}</span><div class="icon">${d.icon}</div></div>
+  <div class="deal-body"><div class="meta"><span>${d.category}</span><span>${d.status}</span></div><h3>${d.title}</h3><p>${d.desc}</p><span class="cta">Affiliate link pending verification</span></div>
+ </article>`).join("");
+}
+document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(b.dataset.filter)});
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("updated").textContent="UPDATED "+new Date().toLocaleDateString(undefined,{month:"short",day:"numeric"}).toUpperCase();
+render();
+</script>
+</body>
+</html>
