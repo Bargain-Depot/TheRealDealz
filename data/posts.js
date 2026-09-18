@@ -63,27 +63,64 @@
       category:"iPhone 18 Pro", tags:["iphone 18 pro","tech","case","magsafe","apple","silicone"],
       note:"Apple's silicone MagSafe case for iPhone 18 Pro in Burgundy.",
       link:amazonLink("B0HJ9SJF63"), image:amazonImage("B0HJ9SJF63")
+    },
+    iphone18ProMaxGlass: {
+      id:"iphone18ProMaxGlass", asin:"B0D84R9HYW", name:"Spigen GlasTR EZ FIT Screen Protector for iPhone 18 Pro Max",
+      category:"iPhone 18 Pro Max", tags:["iphone 18 pro max","tech","screen protector","spigen","protection","affordable"],
+      note:"Spigen's EZ FIT screen-protector variant for iPhone 18 Pro Max.",
+      link:amazonLink("B0D84R9HYW"), image:amazonImage("B0D84R9HYW")
+    },
+    iphone18ProMaxEsrGlass: {
+      id:"iphone18ProMaxEsrGlass", asin:"B0FC2CRDPV", name:"ESR 3-Pack Screen Protector for iPhone 18 Pro Max",
+      category:"iPhone 18 Pro Max", tags:["iphone 18 pro max","tech","screen protector","esr","protection","affordable"],
+      note:"A three-pack tempered-glass option with an installation tray for iPhone 18 Pro Max.",
+      link:amazonLink("B0FC2CRDPV"), image:amazonImage("B0FC2CRDPV")
+    },
+    iphoneDuoSpigenGlass: {
+      id:"iphoneDuoSpigenGlass", asin:"B0HCR3MXS6", name:"Spigen GlasTR EZ FIT Screen Protector for iPhone Duo",
+      category:"iPhone Duo", tags:["iphone duo","iphone 18","tech","screen protector","spigen","protection","affordable"],
+      note:"Spigen's iPhone Duo screen-protector variant from the same EZ FIT family.",
+      link:amazonLink("B0HCR3MXS6"), image:amazonImage("B0HCR3MXS6")
+    },
+    iphone18CarCharger: {
+      id:"iphone18CarCharger", asin:"B0CT8GDXLW", name:"LISEN USB-C Fast Car Charger",
+      category:"iPhone 18 family", tags:["iphone 18","iphone duo","iphone 18 pro","iphone 18 pro max","car charger","usb-c","affordable"],
+      note:"A USB-C car-charging option whose listing includes the new iPhone family among compatible devices.",
+      link:amazonLink("B0CT8GDXLW"), image:amazonImage("B0CT8GDXLW")
+    },
+    iphone18MagsafeWallet: {
+      id:"iphone18MagsafeWallet", asin:"B0D9W9VYPN", name:"ESR 5-Card MagSafe Wallet",
+      category:"iPhone 18 Pro / Pro Max", tags:["iphone 18 pro","iphone 18 pro max","magsafe","wallet","esr","mid-tier"],
+      note:"A magnetic wallet option for conventional MagSafe iPhones; best suited to the 18 Pro and Pro Max.",
+      link:amazonLink("B0D9W9VYPN"), image:amazonImage("B0D9W9VYPN")
+    },
+    iphone18CarMount: {
+      id:"iphone18CarMount", asin:"B0F6D28F7R", name:"LISEN MagSafe Car Mount",
+      category:"iPhone 18 Pro / Pro Max", tags:["iphone 18 pro","iphone 18 pro max","magsafe","car mount","mid-tier"],
+      note:"A magnetic car-mount option for shoppers who regularly use their iPhone for navigation.",
+      link:amazonLink("B0F6D28F7R"), image:amazonImage("B0F6D28F7R")
     }
   };
 
   const posts = [
     {
-      id:"iphone-18-pro-accessories",
+      id:"iphone-18-accessories",
       type:"roundup",
-      badge:"New iPhone 18 Pro",
-      title:"Just got an iPhone 18 Pro? Start with these accessories",
-      excerpt:"Protect the phone first, then add the extras. We pulled together verified case and screen-protection picks without turning the list into a cart full of gimmicks.",
-      category:"Tech",
-      categories:["tech","trending","guides"],
-      tags:["iphone 18 pro","apple","magsafe","case","screen protector","accessories","new iphone"],
-      published:"2026-09-18T18:30:00-04:00",
+      badge:"iPhone 18 family guide",
+      title:"The iPhone 18 accessory hub: affordable to premium",
+      excerpt:"Choose your model first, then your budget. Compare practical picks for iPhone 18 Pro, iPhone 18 Pro Max, and iPhone Duo with clear pros and cons.",
+      category:"iPhone 18",
+      categories:["iphone-18","tech","trending","guides"],
+      tags:["iphone 18","iphone 18 pro","iphone 18 pro max","iphone duo","apple","magsafe","case","screen protector","accessories","budget","premium"],
+      published:"2026-09-18T19:28:00-04:00",
       updated:"Updated today",
-      priority:97,
-      productIds:["iphone18SpigenCase","iphone18SpigenGlass","iphone18TechWoven","iphone18Silicone"],
-      href:"articles/iphone-18-pro-accessories.html",
+      priority:98,
+      trendingRank:2,
+      productIds:["iphone18SpigenGlass","iphone18ProMaxEsrGlass","iphoneDuoSpigenGlass","iphone18SpigenCase","iphone18MagsafeWallet","iphone18TechWoven"],
+      href:"articles/iphone-18-accessories.html",
       body:[
-        "The iPhone 18 Pro is new, which means accessory searches are moving fast. Our first-pass rule is simple: protect the phone before buying novelty accessories. A well-fitting case and screen protector are the most practical starting point.",
-        "Apple's own iPhone 18 Pro accessory catalog confirms a broad MagSafe ecosystem including cases, wallets, chargers, power banks, docks, and mounts. We’ll expand this guide as more exact-fit accessories are verified instead of filling it with products that only say they are 'universal.'"
+        "Apple's current 2026 new-iPhone family is iPhone 18 Pro, iPhone 18 Pro Max, and the foldable iPhone Duo. The right accessory starts with choosing the exact model, because cases and screen protection are not interchangeable.",
+        "The hub separates value-oriented, mid-tier, and premium picks, then gives the trade-offs for each. We avoid fixed Amazon prices because they change; the tier describes current product positioning rather than a permanent dollar cutoff."
       ],
       related:["prime-big-deal-days-2026","airtag-quick-find","how-we-pick"]
     },
@@ -272,6 +309,7 @@
   const categories = [
     {id:"all", label:"All", description:"Everything in the feed"},
     {id:"trending", label:"Trending", description:"What we’re watching now"},
+    {id:"iphone-18", label:"iPhone 18", description:"Pro, Pro Max & Duo accessories by budget"},
     {id:"under-25", label:"Under $25", description:"Only after a current price is verified"},
     {id:"tech", label:"Tech", description:"Devices, accessories & useful tech"},
     {id:"home", label:"Home", description:"Smart home, cleaning & practical upgrades"},
