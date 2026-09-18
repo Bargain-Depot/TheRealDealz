@@ -39,10 +39,54 @@
       category:"Kitchen", tags:["kitchen","home","gift","cooking"],
       note:"A versatile 6-quart enameled Dutch oven we’re watching for kitchen shoppers.",
       link:amazonLink("B000N501BK"), image:amazonImage("B000N501BK")
+    },
+    iphone18SpigenCase: {
+      id:"iphone18SpigenCase", asin:"B0FD1RNHHL", name:"Spigen Ultra Hybrid MagFit Case for iPhone 18 Pro / 17 Pro",
+      category:"iPhone 18 Pro", tags:["iphone 18 pro","tech","case","magsafe","spigen","protection"],
+      note:"A MagSafe-compatible hybrid case sized for iPhone 18 Pro / 17 Pro.",
+      link:amazonLink("B0FD1RNHHL"), image:amazonImage("B0FD1RNHHL")
+    },
+    iphone18SpigenGlass: {
+      id:"iphone18SpigenGlass", asin:"B0D84YX465", name:"Spigen GlasTR EZ FIT Screen Protector for iPhone 18 Pro",
+      category:"iPhone 18 Pro", tags:["iphone 18 pro","tech","screen protector","spigen","protection"],
+      note:"A tempered-glass screen protector with an alignment tray for easier installation.",
+      link:amazonLink("B0D84YX465"), image:amazonImage("B0D84YX465")
+    },
+    iphone18TechWoven: {
+      id:"iphone18TechWoven", asin:"B0HJ9VSRBN", name:"Apple iPhone 18 Pro TechWoven Case with MagSafe – Mulberry",
+      category:"iPhone 18 Pro", tags:["iphone 18 pro","tech","case","magsafe","apple","techwoven"],
+      note:"Apple's TechWoven MagSafe case for iPhone 18 Pro in Mulberry.",
+      link:amazonLink("B0HJ9VSRBN"), image:amazonImage("B0HJ9VSRBN")
+    },
+    iphone18Silicone: {
+      id:"iphone18Silicone", asin:"B0HJ9SJF63", name:"Apple iPhone 18 Pro Silicone Case with MagSafe – Burgundy",
+      category:"iPhone 18 Pro", tags:["iphone 18 pro","tech","case","magsafe","apple","silicone"],
+      note:"Apple's silicone MagSafe case for iPhone 18 Pro in Burgundy.",
+      link:amazonLink("B0HJ9SJF63"), image:amazonImage("B0HJ9SJF63")
     }
   };
 
   const posts = [
+    {
+      id:"iphone-18-pro-accessories",
+      type:"roundup",
+      badge:"New iPhone 18 Pro",
+      title:"Just got an iPhone 18 Pro? Start with these accessories",
+      excerpt:"Protect the phone first, then add the extras. We pulled together verified case and screen-protection picks without turning the list into a cart full of gimmicks.",
+      category:"Tech",
+      categories:["tech","trending","guides"],
+      tags:["iphone 18 pro","apple","magsafe","case","screen protector","accessories","new iphone"],
+      published:"2026-09-18T18:30:00-04:00",
+      updated:"Updated today",
+      priority:97,
+      productIds:["iphone18SpigenCase","iphone18SpigenGlass","iphone18TechWoven","iphone18Silicone"],
+      href:"articles/iphone-18-pro-accessories.html",
+      body:[
+        "The iPhone 18 Pro is new, which means accessory searches are moving fast. Our first-pass rule is simple: protect the phone before buying novelty accessories. A well-fitting case and screen protector are the most practical starting point.",
+        "Apple's own iPhone 18 Pro accessory catalog confirms a broad MagSafe ecosystem including cases, wallets, chargers, power banks, docks, and mounts. We’ll expand this guide as more exact-fit accessories are verified instead of filling it with products that only say they are 'universal.'"
+      ],
+      related:["prime-big-deal-days-2026","airtag-quick-find","how-we-pick"]
+    },
     {
       id:"prime-big-deal-days-2026",
       type:"campaign",
