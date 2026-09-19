@@ -41,18 +41,16 @@
       link:amazonLink("B000N501BK"), image:amazonImage("B000N501BK")
     },
     airpods5Base: {
-      id:"airpods5Base", asin:null, retailer:"Apple", affiliate:false, name:"AirPods 5",
+      id:"airpods5Base", asin:"B0HJB69GJL", retailer:"Amazon", affiliate:true, name:"Apple AirPods 5",
       category:"AirPods 5", tags:["airpods 5","apple","audio","earbuds","anc","open-ear"],
-      note:"The $129 launch model with ANC, USB-C charging, Adaptive Audio, Live Translation, and Siri AI.",
-      link:"https://www.apple.com/shop/buy-airpods/airpods-5",
-      image:"https://www.apple.com/newsroom/images/2026/09/apple-introduces-airpods-5-with-best-in-class-open-ear-active-noise-cancellation/article/Apple-AirPods-5-hero-260909_big.jpg.large_2x.jpg"
+      note:"The launch AirPods 5 model with ANC and USB-C charging; exact Amazon listing verified before linking.",
+      link:amazonLink("B0HJB69GJL"), image:amazonImage("B0HJB69GJL")
     },
     airpods5Wireless: {
-      id:"airpods5Wireless", asin:null, retailer:"Apple", affiliate:false, name:"AirPods 5 with Wireless Charging Case",
+      id:"airpods5Wireless", asin:"B0HJB76H2V", retailer:"Amazon", affiliate:true, name:"Apple AirPods 5 with Wireless Charging Case",
       category:"AirPods 5", tags:["airpods 5","apple","audio","earbuds","anc","wireless charging","qi","volume swipe"],
-      note:"The $149 launch model adds wireless charging, volume swipe, longer ANC battery life, and a Find My case speaker.",
-      link:"https://www.apple.com/shop/buy-airpods/airpods-5/with-wireless-charging-case",
-      image:"https://www.apple.com/newsroom/images/2026/09/apple-introduces-airpods-5-with-best-in-class-open-ear-active-noise-cancellation/article/Apple-AirPods-5-Wireless-Charging-Case-260909_inline.jpg.large_2x.jpg"
+      note:"The wireless-charging AirPods 5 variant; exact Amazon listing verified before linking.",
+      link:amazonLink("B0HJB76H2V"), image:amazonImage("B0HJB76H2V")
     },
     iphone18SpigenCase: {
       id:"iphone18SpigenCase", asin:"B0FD1RNHHL", name:"Spigen Ultra Hybrid MagFit Case for iPhone 18 Pro / 17 Pro",
