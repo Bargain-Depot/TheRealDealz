@@ -21,6 +21,9 @@
   const postToken = id => `post:${id}`;
   const productToken = id => `product:${id}`;
   const isSaved = token => state.saved.has(token);
+  function retailerName(p){ return p?.retailer || "Amazon"; }
+  function productRel(p){ return p?.affiliate === false ? "noopener" : "sponsored noopener"; }
+  function productCta(p){ return `Check ${retailerName(p)} →`; }
 
   function persistSaved(){
     localStorage.setItem("trd-saved-v2", JSON.stringify([...state.saved]));
@@ -92,11 +95,11 @@
     return `<div class="product-rail">${productIds.map(id=>{
       const p=products[id];
       return `<article class="mini-product">
-        <a class="mini-product-image" href="${p.link}" target="_blank" rel="sponsored noopener" aria-label="View ${esc(p.name)} on Amazon"><img loading="lazy" src="${p.image}" alt="${esc(p.name)}"></a>
+        <a class="mini-product-image" href="${p.link}" target="_blank" rel="${productRel(p)}" aria-label="View ${esc(p.name)} at ${esc(retailerName(p))}"><img loading="lazy" src="${p.image}" alt="${esc(p.name)}"></a>
         <div class="mini-product-copy">
           <strong>${esc(p.name)}</strong>
           <div class="mini-product-actions">
-            <a href="${p.link}" target="_blank" rel="sponsored noopener">Check Amazon →</a>
+            <a href="${p.link}" target="_blank" rel="sponsored noopener">${esc(productCta(p))}</a>
             ${productHeart(p)}
           </div>
         </div>
@@ -132,11 +135,11 @@
   function actionButtons(post){
     const first=post.productIds?.length ? products[post.productIds[0]] : null;
     if(post.href){
-      return `<a class="primary-link" href="${post.href}">Open campaign ${icons.arrow}</a>
+      return `<a class="primary-link" href="${post.href}">${post.type==="campaign"?"Open campaign":"Open guide"} ${icons.arrow}</a>
               <button class="secondary-link open-post" data-post="${post.id}">Why we're watching it</button>`;
     }
     if(post.type === "quick" && first){
-      return `<a class="amazon-button" href="${first.link}" target="_blank" rel="sponsored noopener">Check current Amazon offer ${icons.arrow}</a>
+      return `<a class="amazon-button" href="${first.link}" target="_blank" rel="${productRel(first)}">Check current ${esc(retailerName(first))} listing ${icons.arrow}</a>
               <button class="secondary-link open-post" data-post="${post.id}">Why it's here</button>`;
     }
     return `<button class="primary-link open-post" data-post="${post.id}">View post ${icons.arrow}</button>`;
@@ -147,9 +150,9 @@
     const a=products[aId], b=products[bId];
     if(!a || !b) return "";
     return `<div class="comparison-row">
-      <a class="compare-product" href="${a.link}" target="_blank" rel="sponsored noopener"><img loading="lazy" src="${a.image}" alt="${esc(a.name)}"><strong>${esc(a.name)}</strong></a>
+      <a class="compare-product" href="${a.link}" target="_blank" rel="${productRel(a)}"><img loading="lazy" src="${a.image}" alt="${esc(a.name)}"><strong>${esc(a.name)}</strong></a>
       <span class="versus">VS</span>
-      <a class="compare-product" href="${b.link}" target="_blank" rel="sponsored noopener"><img loading="lazy" src="${b.image}" alt="${esc(b.name)}"><strong>${esc(b.name)}</strong></a>
+      <a class="compare-product" href="${b.link}" target="_blank" rel="${productRel(b)}"><img loading="lazy" src="${b.image}" alt="${esc(b.name)}"><strong>${esc(b.name)}</strong></a>
     </div>`;
   }
 
@@ -225,13 +228,13 @@
 
   function productCard(p){
     return `<article class="product-card">
-      <a class="product-card-image" href="${p.link}" target="_blank" rel="sponsored noopener"><img loading="lazy" src="${p.image}" alt="${esc(p.name)}"></a>
+      <a class="product-card-image" href="${p.link}" target="_blank" rel="${productRel(p)}"><img loading="lazy" src="${p.image}" alt="${esc(p.name)}"></a>
       <div class="product-card-copy">
-        <span class="product-card-label">${esc(p.category)} · ASIN ${esc(p.asin)}</span>
+        <span class="product-card-label">${esc(p.category)} · ${p.asin?`ASIN ${esc(p.asin)}`:`${esc(retailerName(p))} direct`}</span>
         <h3>${esc(p.name)}</h3>
         <p>${esc(p.note)}</p>
         <div class="product-card-actions">
-          <a class="amazon-button" href="${p.link}" target="_blank" rel="sponsored noopener">Check Amazon →</a>
+          <a class="amazon-button" href="${p.link}" target="_blank" rel="${productRel(p)}">${esc(productCta(p))}</a>
           ${productHeart(p)}
         </div>
       </div>
@@ -260,12 +263,12 @@
     const matchedProducts=productList.filter(p=>[p.name,p.category,p.note,...p.tags].join(" ").toLowerCase().includes(q));
     const results=[
       ...matchedPosts.map(p=>({kind:"post",id:p.id,title:p.title,meta:`Post · ${p.category}`,image:p.productIds?.length?products[p.productIds[0]].image:""})),
-      ...matchedProducts.map(p=>({kind:"product",id:p.id,title:p.name,meta:`Product · ${p.category}`,image:p.image,link:p.link}))
+      ...matchedProducts.map(p=>({kind:"product",id:p.id,title:p.name,meta:`Product · ${p.category}`,image:p.image,link:p.link,retailer:retailerName(p),rel:productRel(p)}))
     ];
     $("#searchResults").innerHTML=results.length?results.map(r=>`<div class="search-result">
       ${r.image?`<img loading="lazy" src="${r.image}" alt="">`:`<div></div>`}
       <div><strong>${esc(r.title)}</strong><span>${esc(r.meta)}</span></div>
-      ${r.kind==="post"?`<button class="open-post" data-post="${r.id}">Open →</button>`:`<a href="${r.link}" target="_blank" rel="sponsored noopener">Amazon →</a>`}
+      ${r.kind==="post"?`<button class="open-post" data-post="${r.id}">Open →</button>`:`<a href="${r.link}" target="_blank" rel="${r.rel||"noopener"}">${esc(r.retailer||"Retailer")} →</a>`}
     </div>`).join(""):`<div class="empty-state"><h3>No verified matches yet.</h3><p>We’d rather show nothing than invent a result. Try a broader search or another category.</p></div>`;
   }
 
@@ -303,7 +306,7 @@
         ${post.productIds?.length?productRail(post.productIds):""}
         <div class="modal-body">
           ${post.body.map((p,i)=>`${i===0?"":"<h3>"+(i===1?"What to know":"Why it matters")+"</h3>"}<p>${esc(p)}</p>`).join("")}
-          <p><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Product prices and availability can change; check Amazon for the current offer.</p>
+          <p><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Product details, prices, and availability can change; check the linked retailer for the current offer.</p>
         </div>
         ${related.length?`<div class="related-block"><strong>More like this</strong><div class="related-links">${related.map(r=>`<button class="related-link open-post" data-post="${r.id}"><small>${esc(r.category)}</small><strong>${esc(r.title)}</strong></button>`).join("")}</div></div>`:""}
       </div>`;
