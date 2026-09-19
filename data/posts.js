@@ -40,6 +40,20 @@
       note:"A versatile 6-quart enameled Dutch oven we’re watching for kitchen shoppers.",
       link:amazonLink("B000N501BK"), image:amazonImage("B000N501BK")
     },
+    airpods5Base: {
+      id:"airpods5Base", asin:null, retailer:"Apple", affiliate:false, name:"AirPods 5",
+      category:"AirPods 5", tags:["airpods 5","apple","audio","earbuds","anc","open-ear"],
+      note:"The $129 launch model with ANC, USB-C charging, Adaptive Audio, Live Translation, and Siri AI.",
+      link:"https://www.apple.com/shop/buy-airpods/airpods-5",
+      image:"https://www.apple.com/newsroom/images/2026/09/apple-introduces-airpods-5-with-best-in-class-open-ear-active-noise-cancellation/article/Apple-AirPods-5-hero-260909_big.jpg.large_2x.jpg"
+    },
+    airpods5Wireless: {
+      id:"airpods5Wireless", asin:null, retailer:"Apple", affiliate:false, name:"AirPods 5 with Wireless Charging Case",
+      category:"AirPods 5", tags:["airpods 5","apple","audio","earbuds","anc","wireless charging","qi","volume swipe"],
+      note:"The $149 launch model adds wireless charging, volume swipe, longer ANC battery life, and a Find My case speaker.",
+      link:"https://www.apple.com/shop/buy-airpods/airpods-5/with-wireless-charging-case",
+      image:"https://www.apple.com/newsroom/images/2026/09/apple-introduces-airpods-5-with-best-in-class-open-ear-active-noise-cancellation/article/Apple-AirPods-5-Wireless-Charging-Case-260909_inline.jpg.large_2x.jpg"
+    },
     iphone18SpigenCase: {
       id:"iphone18SpigenCase", asin:"B0FD1RNHHL", name:"Spigen Ultra Hybrid MagFit Case for iPhone 18 Pro / 17 Pro",
       category:"iPhone 18 Pro", tags:["iphone 18 pro","tech","case","magsafe","spigen","protection"],
@@ -104,6 +118,27 @@
 
   const posts = [
     {
+      id:"airpods-5-129-vs-149",
+      type:"comparison",
+      badge:"Launch-day decision guide",
+      title:"AirPods 5: is the $149 version worth the extra $20?",
+      excerpt:"Both new AirPods 5 models get ANC. The real decision is whether wireless charging, volume swipe, and the extra hour of ANC battery life are worth $20 to you.",
+      category:"AirPods 5",
+      categories:["airpods-5","tech","trending","guides"],
+      tags:["airpods 5","apple","earbuds","anc","wireless charging","comparison","launch day"],
+      published:"2026-09-18T20:50:00-04:00",
+      updated:"Updated today",
+      priority:99,
+      trendingRank:1,
+      productIds:["airpods5Base","airpods5Wireless"],
+      href:"articles/airpods-5-which-one.html",
+      body:[
+        "Apple launched AirPods 5 in two versions at $129 and $149. Both include Active Noise Cancellation, Adaptive Audio, Transparency, Live Translation, Siri AI, Personalized Spatial Audio, and IP57 resistance.",
+        "The $149 model earns its $20 premium with wireless charging, on-stem volume swipe, up to five hours of listening with ANC instead of four, and a case speaker for Find My. If you only charge by USB-C and rarely adjust volume from the stem, the $129 model keeps the core experience."
+      ],
+      related:["iphone-18-accessories","prime-big-deal-days-2026","how-we-pick"]
+    },
+    {
       id:"iphone-18-accessories",
       type:"roundup",
       badge:"iPhone 18 family guide",
@@ -115,7 +150,7 @@
       published:"2026-09-18T19:28:00-04:00",
       updated:"Updated today",
       priority:98,
-      trendingRank:2,
+      trendingRank:3,
       productIds:["iphone18SpigenGlass","iphone18ProMaxEsrGlass","iphoneDuoSpigenGlass","iphone18SpigenCase","iphone18MagsafeWallet","iphone18TechWoven"],
       href:"articles/iphone-18-accessories.html",
       body:[
@@ -137,7 +172,7 @@
       updated:"Updated today",
       featured:true,
       priority:100,
-      trendingRank:1,
+      trendingRank:2,
       productIds:["blink","ring","kindle"],
       href:"articles/prime-big-deal-days-2026.html",
       body:[
@@ -158,7 +193,7 @@
       published:"2026-09-18T17:20:00-04:00",
       updated:"Updated today",
       priority:92,
-      trendingRank:2,
+      trendingRank:4,
       productIds:["blink","ring"],
       body:[
         "These are not identical products: one is centered on a broader camera-plus-doorbell setup, while the other is a doorbell bundle with an extra battery. That makes the choice more about the setup you want than which logo is more popular.",
@@ -178,7 +213,7 @@
       published:"2026-09-18T17:05:00-04:00",
       updated:"Updated today",
       priority:88,
-      trendingRank:3,
+      trendingRank:5,
       productIds:["airtag"],
       body:[
         "This one makes the feed because the use case is easy to understand: small trackers for items you already worry about losing. A four-pack also gives it a natural household and gifting angle.",
@@ -198,7 +233,7 @@
       published:"2026-09-18T16:45:00-04:00",
       updated:"Updated today",
       priority:82,
-      trendingRank:4,
+      trendingRank:6,
       productIds:["dewalt"],
       body:[
         "The best affiliate finds usually solve a recognizable annoyance. This one is less about novelty and more about avoiding a full-size vacuum when the job is small.",
@@ -218,7 +253,7 @@
       published:"2026-09-18T16:30:00-04:00",
       updated:"Updated today",
       priority:79,
-      trendingRank:5,
+      trendingRank:7,
       productIds:["kindle"],
       body:[
         "Bundles can be easier to compare when you care about the full setup rather than the device alone. This linked version combines the Colorsoft reader, cover, and power adapter.",
@@ -238,7 +273,7 @@
       published:"2026-09-18T16:05:00-04:00",
       updated:"Updated today",
       priority:72,
-      trendingRank:6,
+      trendingRank:8,
       productIds:["lodge"],
       body:[
         "The appeal here is versatility: braises, soups, bread, one-pot meals, and oven-to-table cooking. That makes it easier to justify than a gadget with one narrow use.",
@@ -309,6 +344,7 @@
   const categories = [
     {id:"all", label:"All", description:"Everything in the feed"},
     {id:"trending", label:"Trending", description:"What we’re watching now"},
+    {id:"airpods-5", label:"AirPods 5", description:"Launch guide, models & accessories"},
     {id:"iphone-18", label:"iPhone 18", description:"Pro, Pro Max & Duo accessories by budget"},
     {id:"under-25", label:"Under $25", description:"Only after a current price is verified"},
     {id:"tech", label:"Tech", description:"Devices, accessories & useful tech"},
