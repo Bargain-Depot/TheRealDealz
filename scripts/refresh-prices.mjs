@@ -7,7 +7,7 @@ const now=new Date().toISOString();
 let active=false;
 
 state.schemaVersion=1;
-state.refreshTargetMinutes=15;
+state.refreshTargetMinutes=60;
 state.sources=state.sources||{};
 state.products=state.products||{};
 
