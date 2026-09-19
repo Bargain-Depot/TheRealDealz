@@ -1,0 +1,7 @@
+{
+  "_instructions": {
+    "purpose": "Amazon-served Enhanced Product Links. Add the exact iframe src generated inside Amazon Associates Central for each product. Do not invent or scrape these URLs.",
+    "trackingId": "therealdea0cb-20",
+    "fields": "src, width, height"
+  }
+}
