@@ -116,6 +116,42 @@
 
   const posts = [
     {
+      id:"bose-open-ear-2026",
+      type:"comparison",
+      badge:"Preorder comparison",
+      title:"Bose Sport Open vs Ultra Open 2 vs the $199 original Ultra Open",
+      excerpt:"Two new Bose open-ear models enter preorder today. The older Ultra Open is the value wildcard while Bose still shows it at $199.",
+      category:"Tech",
+      categories:["tech","trending","guides"],
+      tags:["bose","open ear","earbuds","sport","comparison"],
+      published:"2026-09-19T07:15:00-04:00",
+      updated:"Verified today",
+      priority:97,
+      trendingRank:2,
+      productIds:[],
+      href:"articles/bose-open-ear-2026-comparison.html",
+      body:["Bose Sport Open is $199 and Ultra Open Earbuds (2nd Gen) is $299, with preorders opening September 19 and availability October 1.","Bose's own open-ear comparison currently shows the original Ultra Open at $199, making the real shopping question new Sport versus discounted older flagship versus the new premium model."],
+      related:["airpods-5-129-vs-149","how-we-pick"]
+    },
+    {
+      id:"ps5-pro-restock-gta-vi",
+      type:"tracker",
+      badge:"Live retail check",
+      title:"PS5 Pro restock tracker ahead of GTA VI",
+      excerpt:"Check verified retail inventory before paying marketplace markups. GTA VI launches on PS5 and PS5 Pro November 19.",
+      category:"Tech",
+      categories:["tech","trending","guides"],
+      tags:["ps5 pro","playstation","gta vi","restock","gaming"],
+      published:"2026-09-19T07:16:00-04:00",
+      updated:"Verified today",
+      priority:96,
+      trendingRank:3,
+      productIds:[],
+      href:"articles/ps5-pro-restock-gta-vi.html",
+      body:["Current shopping data surfaced the PS5 Pro 2TB at $899 and in stock at PlayStation Direct and an exact Sony console listing at Walmart. Inventory can change quickly.","PlayStation confirms GTA VI releases November 19, 2026 on both PS5 and PS5 Pro, so the standard PS5 remains a valid alternative when Pro inventory or resale pricing is unfavorable."],
+      related:["how-we-pick","prime-big-deal-days-2026"]
+    },
+    {
       id:"airpods-5-129-vs-149",
       type:"comparison",
       badge:"Launch-day decision guide",
