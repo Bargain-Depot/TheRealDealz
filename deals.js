@@ -34,7 +34,7 @@
     return [...byKey.values()].filter(o=>o?.link);
   }
   function offerRel(o){return o.affiliate===false?"noopener":"sponsored noopener"}
-  function priceText(o){return Number.isFinite(o.price)?new Intl.NumberFormat("en-US",{style:"currency",currency:o.currency||"USD"}).format(o.price):"Check live price"}
+  function priceText(o){return Number.isFinite(o.price)?new Intl.NumberFormat("en-US",{style:"currency",currency:o.currency||"USD"}).format(o.price):(o?.retailer==="Amazon"?"See Amazon price":"Check live price")}
   function sortedOffers(p){
     const list=mergedOffers(p).slice();
     list.sort((a,b)=>{
@@ -112,7 +112,7 @@
     const w=watched(),last=JSON.parse(localStorage.getItem("trd-last-prices-v1")||"{}"),next={...last};
     w.forEach(id=>{
       const p=products[id];if(!p)return;
-      const priced=sortedOffers(p).filter(o=>Number.isFinite(o.price));
+      const priced=sortedOffers(p).filter(o=>Number.isFinite(o.price) && o.retailer!=="Amazon");
       if(!priced.length)return;
       const current=Math.min(...priced.map(o=>o.price)),previous=Number(last[id]);
       if(Number.isFinite(previous)&&current<previous){
@@ -153,7 +153,7 @@
       const id=watchBtn.dataset.dealWatch,set=watched();set.has(id)?set.delete(id):set.add(id);localStorage.setItem("trd-price-watches-v1",JSON.stringify([...set]));
       if(set.has(id)&&"Notification" in window&&Notification.permission==="default"){try{await Notification.requestPermission()}catch(_){}}
       renderFeed();renderCompare(search.value);
-      toast(set.has(id)?"Price watch saved — we’ll compare newer verified snapshots":"Price watch removed");return;
+      toast(set.has(id)?"Watch saved — Amazon price alerts are excluded; other connected retailer prices can trigger drops":"Price watch removed");return;
     }
     const shareBtn=e.target.closest("[data-deal-share]");if(shareBtn){
       const p=products[shareBtn.dataset.dealShare];if(!p)return;const url=location.origin+location.pathname+`#dealCompare`;
