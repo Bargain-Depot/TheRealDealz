@@ -16,6 +16,7 @@
   const watched=()=>new Set(JSON.parse(localStorage.getItem("trd-price-watches-v1")||"[]"));
   const saveKey=id=>`product:${id}`;
   let livePrices={generatedAt:null,sources:{},products:{}};
+  let amazonEnhanced={};
 
   function toast(message){
     const el=document.getElementById("toast");if(!el)return;
@@ -54,6 +55,14 @@
     const save=Number.isFinite(o.savingsPercent)&&o.savingsPercent>0?`<span class="deal-savings">-${Math.round(o.savingsPercent)}%</span>`:"";
     return `<div class="deal-price-line"><span class="deal-price">${esc(priceText(o))}</span>${reg}${save}</div>`;
   }
+  function amazonEnhancedConfig(p){return amazonEnhanced?.[p.id] || null}
+  function amazonEnhancedFrame(p){
+    const cfg=amazonEnhancedConfig(p);
+    if(!cfg?.src) return "";
+    const width=Math.max(120,Math.min(Number(cfg.width)||120,600));
+    const height=Math.max(240,Math.min(Number(cfg.height)||240,600));
+    return `<div class="amazon-enhanced-wrap"><div class="amazon-enhanced-label">Live Amazon product link · served by Amazon</div><iframe class="amazon-enhanced-frame" title="Amazon live product link for ${esc(p.name)}" src="${esc(cfg.src)}" width="${width}" height="${height}" scrolling="no" frameborder="0" loading="lazy"></iframe></div>`;
+  }
   function sourceStatus(){
     if(!statusEl)return;
     const entries=Object.entries(livePrices.sources||{});
@@ -76,6 +85,7 @@
         ${priceBlock(primary)}
         <div class="deal-offer-strip"><span>${primary?.verifiedAt?"Verified retailer price":"Verified shopping destination"}</span><strong>${primary?esc(primary.retailer):"No offer connected yet"}</strong></div>
         ${primary?.verifiedAt?`<p class="deal-timestamp">Price checked ${esc(stamp(primary))}. Price and availability can change at checkout.</p>`:""}
+        ${primary?.retailer==="Amazon"?amazonEnhancedFrame(p):""}
         <div class="deal-bottom-actions"><button class="deal-compare-button" data-compare-id="${esc(p.id)}">Compare stores</button>${primary?`<a class="deal-buy" href="${esc(primary.link)}" target="_blank" rel="${offerRel(primary)}">Buy / check price →</a>`:""}</div>
       </div>
       <div class="deal-action-rail">
@@ -98,7 +108,7 @@
         <div class="offer-list">${list.length?list.map(o=>`<div class="offer-row ${lowest!==null&&o.price===lowest?"best":""}">
           <div class="offer-retailer"><strong>${esc(o.retailer)}${lowest!==null&&o.price===lowest?" · Lowest verified":""}</strong><span>${o.affiliate===false?"Non-affiliate reference":"Affiliate link"}${o.verifiedAt?" · checked "+esc(stamp(o)):""}</span></div>
           <div class="offer-price">${esc(priceText(o))}</div><a href="${esc(o.link)}" target="_blank" rel="${offerRel(o)}">Open →</a>
-        </div>`).join(""):`<div class="empty-state"><p>No verified retailer offers connected yet.</p></div>`}</div>
+        </div>${o.retailer==="Amazon"?amazonEnhancedFrame(p):""}`).join(""):`<div class="empty-state"><p>No verified retailer offers connected yet.</p></div>`}</div>
         <div class="compare-product-actions"><button class="compare-watch ${watched().has(p.id)?"active":""}" data-deal-watch="${esc(p.id)}">${watched().has(p.id)?"Watching price":"Watch price"}</button></div>
       </div>
     </article>`;
@@ -124,6 +134,12 @@
     });
     localStorage.setItem("trd-last-prices-v1",JSON.stringify(next));
   }
+  async function loadAmazonEnhanced(){
+    try{
+      const res=await fetch(`data/amazon-enhanced.json?v=${Date.now()}`,{cache:"no-store"});
+      if(res.ok)amazonEnhanced=await res.json();
+    }catch(_){}
+  }
   async function loadPrices(){
     try{
       const res=await fetch(`data/prices.json?v=${Date.now()}`,{cache:"no-store"});
@@ -133,7 +149,7 @@
   }
 
   quick.innerHTML=["AirPods 5","AirTag","Ring","Kindle","iPhone 18"].map(q=>`<button data-compare-query="${esc(q)}">${esc(q)}</button>`).join("");
-  renderFeed();renderCompare();sourceStatus();loadPrices();
+  renderFeed();renderCompare();sourceStatus();Promise.all([loadAmazonEnhanced(),loadPrices()]).then(()=>{renderFeed();renderCompare(search.value);sourceStatus();});
   search.addEventListener("input",()=>renderCompare(search.value));
 
   document.addEventListener("click",async e=>{
