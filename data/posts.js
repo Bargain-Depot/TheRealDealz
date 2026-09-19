@@ -116,6 +116,24 @@
 
   const posts = [
     {
+      id:"pokemon-30th-celebration",
+      type:"tracker",
+      badge:"Live retail watch",
+      title:"Pokémon TCG 30th Celebration: where to buy without paying scalper prices",
+      excerpt:"A living U.S. retail guide for official stock, purchase limits, and safer places to check before paying marketplace markups.",
+      category:"Collectibles",
+      categories:["collectibles","trending","guides"],
+      tags:["pokemon","pokémon","pokemon tcg","30th celebration","tcg","restock","collectibles"],
+      published:"2026-09-19T07:14:00-04:00",
+      updated:"Verified today",
+      priority:98,
+      trendingRank:2,
+      productIds:[],
+      href:"articles/pokemon-30th-where-to-buy.html",
+      body:["The 30th Celebration launch has unusually high demand and uneven stock, so this guide prioritizes official and major-retailer inventory before resale marketplaces.","We only add monetized product buttons after verifying the exact listing and destination. The article remains useful even when a specific retailer is temporarily out of stock."],
+      related:["how-we-pick","prime-big-deal-days-2026"]
+    },
+    {
       id:"bose-open-ear-2026",
       type:"comparison",
       badge:"Preorder comparison",
@@ -127,7 +145,7 @@
       published:"2026-09-19T07:15:00-04:00",
       updated:"Verified today",
       priority:97,
-      trendingRank:2,
+      trendingRank:3,
       productIds:[],
       href:"articles/bose-open-ear-2026-comparison.html",
       body:["Bose Sport Open is $199 and Ultra Open Earbuds (2nd Gen) is $299, with preorders opening September 19 and availability October 1.","Bose's own open-ear comparison currently shows the original Ultra Open at $199, making the real shopping question new Sport versus discounted older flagship versus the new premium model."],
@@ -145,7 +163,7 @@
       published:"2026-09-19T07:16:00-04:00",
       updated:"Verified today",
       priority:96,
-      trendingRank:3,
+      trendingRank:4,
       productIds:[],
       href:"articles/ps5-pro-restock-gta-vi.html",
       body:["Current shopping data surfaced the PS5 Pro 2TB at $899 and in stock at PlayStation Direct and an exact Sony console listing at Walmart. Inventory can change quickly.","PlayStation confirms GTA VI releases November 19, 2026 on both PS5 and PS5 Pro, so the standard PS5 remains a valid alternative when Pro inventory or resale pricing is unfavorable."],
@@ -184,7 +202,7 @@
       published:"2026-09-18T19:28:00-04:00",
       updated:"Updated today",
       priority:98,
-      trendingRank:3,
+      trendingRank:5,
       productIds:["iphone18SpigenGlass","iphone18ProMaxEsrGlass","iphoneDuoSpigenGlass","iphone18SpigenCase","iphone18MagsafeWallet","iphone18TechWoven"],
       href:"articles/iphone-18-accessories.html",
       body:[
@@ -206,7 +224,7 @@
       updated:"Updated today",
       featured:true,
       priority:100,
-      trendingRank:2,
+      trendingRank:6,
       productIds:["blink","ring","kindle"],
       href:"articles/prime-big-deal-days-2026.html",
       body:[
@@ -227,7 +245,7 @@
       published:"2026-09-18T17:20:00-04:00",
       updated:"Updated today",
       priority:92,
-      trendingRank:4,
+      trendingRank:7,
       productIds:["blink","ring"],
       body:[
         "These are not identical products: one is centered on a broader camera-plus-doorbell setup, while the other is a doorbell bundle with an extra battery. That makes the choice more about the setup you want than which logo is more popular.",
@@ -247,7 +265,7 @@
       published:"2026-09-18T17:05:00-04:00",
       updated:"Updated today",
       priority:88,
-      trendingRank:5,
+      trendingRank:8,
       productIds:["airtag"],
       body:[
         "This one makes the feed because the use case is easy to understand: small trackers for items you already worry about losing. A four-pack also gives it a natural household and gifting angle.",
@@ -267,7 +285,7 @@
       published:"2026-09-18T16:45:00-04:00",
       updated:"Updated today",
       priority:82,
-      trendingRank:6,
+      trendingRank:9,
       productIds:["dewalt"],
       body:[
         "The best affiliate finds usually solve a recognizable annoyance. This one is less about novelty and more about avoiding a full-size vacuum when the job is small.",
@@ -287,7 +305,7 @@
       published:"2026-09-18T16:30:00-04:00",
       updated:"Updated today",
       priority:79,
-      trendingRank:7,
+      trendingRank:10,
       productIds:["kindle"],
       body:[
         "Bundles can be easier to compare when you care about the full setup rather than the device alone. This linked version combines the Colorsoft reader, cover, and power adapter.",
@@ -307,7 +325,7 @@
       published:"2026-09-18T16:05:00-04:00",
       updated:"Updated today",
       priority:72,
-      trendingRank:8,
+      trendingRank:11,
       productIds:["lodge"],
       body:[
         "The appeal here is versatility: braises, soups, bread, one-pot meals, and oven-to-table cooking. That makes it easier to justify than a gadget with one narrow use.",
@@ -378,6 +396,7 @@
   const categories = [
     {id:"all", label:"All", description:"Everything in the feed"},
     {id:"trending", label:"Trending", description:"What we’re watching now"},
+    {id:"collectibles", label:"Collectibles", description:"TCG, launches & restock guides"},
     {id:"airpods-5", label:"AirPods 5", description:"Launch guide, models & accessories"},
     {id:"iphone-18", label:"iPhone 18", description:"Pro, Pro Max & Duo accessories by budget"},
     {id:"under-25", label:"Under $25", description:"Only after a current price is verified"},
