@@ -1,0 +1,39 @@
+name: Refresh verified retailer prices
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-retailer-prices
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Refresh retailer price snapshot
+        env:
+          AMAZON_CREATORS_CLIENT_ID: ${{ secrets.AMAZON_CREATORS_CLIENT_ID }}
+          AMAZON_CREATORS_CLIENT_SECRET: ${{ secrets.AMAZON_CREATORS_CLIENT_SECRET }}
+          AMAZON_PARTNER_TAG: therealdea0cb-20
+          BESTBUY_API_KEY: ${{ secrets.BESTBUY_API_KEY }}
+        run: node scripts/refresh-prices.mjs
+      - name: Commit changed price snapshot
+        run: |
+          if git diff --quiet -- data/prices.json; then
+            echo "No price changes to publish."
+            exit 0
+          fi
+          git config user.name "TheReal_Dealz Price Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/prices.json
+          git commit -m "Refresh verified retailer prices"
+          git push

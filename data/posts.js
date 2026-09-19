@@ -408,5 +408,22 @@
     {id:"seasonal", label:"Seasonal", description:"Time-sensitive shopping moments"}
   ];
 
-  window.TRD_DATA = {TAG, products, posts, categories};
+  const offers = Object.fromEntries(Object.values(products).map(product => [
+    product.id,
+    product.offers || [{
+      id:`${product.id}-${(product.retailer || "Amazon").toLowerCase().replace(/[^a-z0-9]+/g,"-")}`,
+      retailer:product.retailer || "Amazon",
+      link:product.link,
+      affiliate:product.affiliate !== false,
+      price:null,
+      regularPrice:null,
+      savingsPercent:null,
+      currency:"USD",
+      availability:null,
+      verifiedAt:null,
+      note:product.affiliate === false ? "Direct retailer reference" : "Verified monetized destination"
+    }]
+  ]));
+
+  window.TRD_DATA = {TAG, products, offers, posts, categories};
 })();

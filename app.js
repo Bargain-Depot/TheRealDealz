@@ -99,7 +99,7 @@
         <div class="mini-product-copy">
           <strong>${esc(p.name)}</strong>
           <div class="mini-product-actions">
-            <a href="${p.link}" target="_blank" rel="sponsored noopener">${esc(productCta(p))}</a>
+            <a href="${p.link}" target="_blank" rel="${productRel(p)}">${esc(productCta(p))}</a>
             ${productHeart(p)}
           </div>
         </div>
@@ -339,6 +339,15 @@
     if(view==="saved") renderSaved();
     window.scrollTo({top:0,behavior:"smooth"});
   }
+
+  window.addEventListener("trd:saved-changed",()=>{
+    try{
+      state.saved=new Set(JSON.parse(localStorage.getItem("trd-saved-v2") || "[]"));
+      updateSavedCount();
+      renderAllSaveStates();
+      if(state.view==="saved") renderSaved();
+    }catch(_){}
+  });
 
   let observer;
   function observeCards(){

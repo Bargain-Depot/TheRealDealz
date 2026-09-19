@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f4f0e8">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="therealdealz-build" content="2026.09.19.28">
-  <meta name="description" content="TheReal_Dealz — a curated feed of useful finds, shopping guides, trend watchlists, and verified Amazon links.">
-  <title>TheReal_Dealz — Curated Finds</title>
+  <meta name="therealdealz-build" content="2026.09.19.32">
+  <meta name="description" content="TheReal_Dealz — swipe deals, compare verified retailer offers, save products, watch for price drops, and shop through verified affiliate links.">
+  <title>TheReal_Dealz — Deals, Price Comparison & Shopping Finds</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260919-28">
+  <link rel="stylesheet" href="styles.css?v=20260919-32">
+  <link rel="stylesheet" href="deals.css?v=20260919-32">
 </head>
 <body>
-  <div class="announcement">CURATED FINDS · VERIFIED LINKS · NO FAKE URGENCY</div>
+  <div class="announcement">DEALS · PRICE COMPARISON · VERIFIED LINKS · NO FAKE URGENCY</div>
 
   <header class="site-header">
     <div class="header-inner">
@@ -22,10 +23,10 @@
 
       <nav class="desktop-nav" aria-label="Main navigation">
         <button class="nav-link active" data-view="home">Home</button>
+        <button class="nav-link" data-deal-anchor="dealSwipe">Deals</button>
+        <button class="nav-link" data-deal-anchor="dealCompare">Compare</button>
         <button class="nav-link" data-view="trending">Trending</button>
-        <button class="nav-link" data-view="watchlist">Watchlist</button>
-        <button class="nav-link" data-view="guides">Guides</button>
-        <button class="nav-link" data-view="categories">Categories</button>
+        <button class="nav-link" data-view="saved">Saved</button>
       </nav>
 
       <div class="header-actions">
@@ -45,14 +46,51 @@
       <div class="home-intro shell">
         <div>
           <p class="kicker">THE REAL DEALZ</p>
-          <h1>The good stuff,<br><span>without the endless scroll.</span></h1>
-          <p class="intro-copy">A shopping feed of timely finds, useful products, and buying guides — curated before they earn a spot here.</p>
+          <h1>Deals worth stopping for,<br><span>in a feed built to shop.</span></h1>
+          <p class="intro-copy">Swipe through products we’re actively watching, compare verified retailer offers, save what you like, and jump straight to a purchase when you’re ready.</p>
+          <div class="hero-actions">
+            <button class="hero-primary" data-deal-anchor="dealSwipe">Start swiping deals ↓</button>
+            <button class="hero-secondary" data-deal-anchor="dealCompare">Compare a product</button>
+          </div>
         </div>
         <div class="intro-note">
           <span class="pulse-dot"></span>
-          <div><strong>Feed updated as new finds are verified.</strong><small>No hard-coded prices. No fake countdowns.</small></div>
+          <div><strong>Deal feed updated as offers are verified.</strong><small>Cheapest-price claims only appear when comparable prices are current.</small></div>
         </div>
       </div>
+
+      <section class="deal-zone shell" id="dealSwipe" aria-labelledby="dealSwipeTitle">
+        <div class="deal-zone-head">
+          <div>
+            <p class="kicker">DEALZ SWIPE</p>
+            <h2 id="dealSwipeTitle">Scroll until something earns the stop.</h2>
+            <p>Built like a social feed: save it, watch the price, compare stores, share it, or buy it directly.</p>
+          </div>
+          <div class="deal-zone-note"><span class="pulse-dot"></span><strong>Every Buy button uses a verified retailer destination.</strong></div>
+        </div>
+        <div class="deal-swipe-stage">
+          <div class="deal-swipe-feed" id="dealSwipeFeed" aria-label="Swipeable deals feed"></div>
+          <div class="deal-swipe-hint">Scroll ↓</div>
+        </div>
+      </section>
+
+      <section class="compare-zone shell" id="dealCompare" aria-labelledby="dealCompareTitle">
+        <div class="compare-intro">
+          <p class="kicker">COMPARE PRICES</p>
+          <h2 id="dealCompareTitle">Before you buy it, check the stores.</h2>
+          <p>Search an exact product. We show every verified offer currently connected to TheReal_Dealz and only label a retailer “lowest verified” when the same exact variant has current comparable prices.</p>
+        </div>
+        <div class="compare-app">
+          <label class="deal-search" for="dealCompareSearch">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+            <input id="dealCompareSearch" type="search" placeholder="Try AirPods 5, AirTag, Ring, Kindle..." autocomplete="off">
+          </label>
+          <div class="compare-quick" id="compareQuick"></div>
+          <div id="priceSourceStatus" class="price-source-status"></div>
+          <div id="dealCompareResults" class="deal-compare-results"></div>
+          <div class="compare-footnote">Verified API prices include a check time and remain subject to change at checkout. Watches are stored on this device; browser price-drop alerts work when you revisit or keep the site open. Full background push/email alerts require the next server-side notification connection.</div>
+        </div>
+      </section>
 
       <div class="feed-controls-wrap">
         <div class="feed-controls shell">
@@ -100,7 +138,7 @@
 
     <section class="view shell page-view" id="watchlistView" data-view-panel="watchlist">
       <div class="page-head">
-        <div><p class="kicker">WATCHLIST</p><h2>Products we’re actively watching.</h2><p>Specific products only. Current prices and availability stay on Amazon so stale numbers don’t linger here.</p></div>
+        <div><p class="kicker">WATCHLIST</p><h2>Products we’re actively watching.</h2><p>Saved products and verified shopping destinations. API-backed prices refresh through the site price service; otherwise the retailer remains the source of truth.</p></div>
       </div>
       <div id="watchlistGrid" class="product-grid"></div>
     </section>
@@ -151,6 +189,8 @@
         <div><p class="kicker">THE REAL DEALZ</p><h2>More</h2></div>
       </div>
       <div class="more-grid">
+        <button class="more-card nav-trigger" data-view="watchlist"><span>Track</span><strong>Watchlist</strong><small>Products we’re actively watching</small></button>
+        <button class="more-card nav-trigger" data-view="guides"><span>Learn</span><strong>Guides</strong><small>Comparisons and buying explainers</small></button>
         <button class="more-card nav-trigger" data-view="categories"><span>Browse</span><strong>Categories</strong><small>Tech, Home, Kitchen, Travel & more</small></button>
         <a class="more-card" href="https://www.tiktok.com/@the_realdealz" target="_blank" rel="noopener"><span>Follow</span><strong>TikTok</strong><small>@the_realdealz</small></a>
         <a class="more-card" href="https://linktr.ee/TheReal_Dealz" target="_blank" rel="noopener"><span>Links</span><strong>All The Dealz</strong><small>Open Linktree</small></a>
@@ -168,11 +208,11 @@
     <button class="mobile-nav-item active" data-view="home">
       <svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg><span>Home</span>
     </button>
-    <button class="mobile-nav-item" data-view="trending">
-      <svg viewBox="0 0 24 24"><path d="M4 17 10 11l4 4 6-8"></path><path d="M15 7h5v5"></path></svg><span>Trending</span>
+    <button class="mobile-nav-item" data-deal-anchor="dealSwipe">
+      <svg viewBox="0 0 24 24"><path d="M7 4h10l3 4-8 12L4 8Z"></path><path d="M8 8h8"></path></svg><span>Deals</span>
     </button>
-    <button class="mobile-nav-item" data-view="search">
-      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg><span>Search</span>
+    <button class="mobile-nav-item" data-deal-anchor="dealCompare">
+      <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M4 17h16"></path><circle cx="9" cy="7" r="2"></circle><circle cx="15" cy="17" r="2"></circle></svg><span>Compare</span>
     </button>
     <button class="mobile-nav-item" data-view="saved">
       <svg viewBox="0 0 24 24"><path d="M20.8 4.7a5.6 5.6 0 0 0-7.9 0L12 5.6l-.9-.9a5.6 5.6 0 1 0-7.9 7.9L12 21l8.8-8.4a5.6 5.6 0 0 0 0-7.9Z"></path></svg><span>Saved</span>
@@ -192,8 +232,9 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="image-fallback.js?v=20260919-28"></script>
-  <script src="data/posts.js?v=20260919-28"></script>
-  <script src="app.js?v=20260919-28"></script>
+  <script src="image-fallback.js?v=20260919-32"></script>
+  <script src="data/posts.js?v=20260919-32"></script>
+  <script src="app.js?v=20260919-32"></script>
+  <script src="deals.js?v=20260919-32"></script>
 </body>
 </html>
