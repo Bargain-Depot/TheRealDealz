@@ -1,110 +1,21 @@
 [
-  {
-    "id": "blink",
-    "amazonAsin": "B0FMLHFWDV",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "ring",
-    "amazonAsin": "B0DSCFGCSX",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "kindle",
-    "amazonAsin": "B0DB6FK1H5",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "airtag",
-    "amazonAsin": "B0D54JZTHY",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "dewalt",
-    "amazonAsin": "B09YXZ4L8T",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "lodge",
-    "amazonAsin": "B000N501BK",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "airpods5Base",
-    "amazonAsin": "B0HJB69GJL",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "airpods5Wireless",
-    "amazonAsin": "B0HJB76H2V",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "iphone18SpigenCase",
-    "amazonAsin": "B0FD1RNHHL",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "iphone18SpigenGlass",
-    "amazonAsin": "B0D84YX465",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "iphone18TechWoven",
-    "amazonAsin": "B0HJ9VSRBN",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "iphone18Silicone",
-    "amazonAsin": "B0HJ9SJF63",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "iphone18ProMaxGlass",
-    "amazonAsin": "B0D84R9HYW",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "iphone18ProMaxEsrGlass",
-    "amazonAsin": "B0FC2CRDPV",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "iphoneDuoSpigenGlass",
-    "amazonAsin": "B0HCR3MXS6",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "iphone18CarCharger",
-    "amazonAsin": "B0CT8GDXLW",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "iphone18MagsafeWallet",
-    "amazonAsin": "B0D9W9VYPN",
-    "bestBuySku": null,
-    "ebayItemId": null
-  },
-  {
-    "id": "iphone18CarMount",
-    "amazonAsin": "B0F6D28F7R",
-    "bestBuySku": null,
-    "ebayItemId": null
-  }
+  {"id":"blink","amazonAsin":"B0FMLHFWDV","bestBuySku":null,"ebayItemId":null},
+  {"id":"ring","amazonAsin":"B0DSCFGCSX","bestBuySku":null,"ebayItemId":null},
+  {"id":"kindle","amazonAsin":"B0DB6FK1H5","bestBuySku":null,"ebayItemId":null},
+  {"id":"airtag","amazonAsin":"B0D54JZTHY","bestBuySku":null,"ebayItemId":null},
+  {"id":"dewalt","amazonAsin":"B09YXZ4L8T","bestBuySku":null,"ebayItemId":null},
+  {"id":"lodge","amazonAsin":"B000N501BK","bestBuySku":null,"ebayItemId":null},
+  {"id":"airpods5Base","amazonAsin":"B0HJB69GJL","bestBuySku":null,"ebayItemId":null},
+  {"id":"airpods5Wireless","amazonAsin":"B0HJB76H2V","bestBuySku":null,"ebayItemId":null},
+  {"id":"iphone18SpigenCase","amazonAsin":"B0FD1RNHHL","bestBuySku":null,"ebayItemId":null},
+  {"id":"iphone18SpigenGlass","amazonAsin":"B0D84YX465","bestBuySku":null,"ebayItemId":null},
+  {"id":"iphone18TechWoven","amazonAsin":"B0HJ9VSRBN","bestBuySku":null,"ebayItemId":null},
+  {"id":"iphone18Silicone","amazonAsin":"B0HJ9SJF63","bestBuySku":null,"ebayItemId":null},
+  {"id":"iphone18ProMaxGlass","amazonAsin":"B0D84R9HYW","bestBuySku":null,"ebayItemId":null},
+  {"id":"iphone18ProMaxEsrGlass","amazonAsin":"B0FC2CRDPV","bestBuySku":null,"ebayItemId":null},
+  {"id":"iphoneDuoSpigenGlass","amazonAsin":"B0HCR3MXS6","bestBuySku":null,"ebayItemId":null},
+  {"id":"iphone18CarCharger","amazonAsin":"B0CT8GDXLW","bestBuySku":null,"ebayItemId":null},
+  {"id":"iphone18MagsafeWallet","amazonAsin":"B0D9W9VYPN","bestBuySku":null,"ebayItemId":null},
+  {"id":"iphone18CarMount","amazonAsin":"B0F6D28F7R","bestBuySku":null,"ebayItemId":null},
+  {"id":"pokemon30ETB","amazonAsin":"B0H78BB9TY","bestBuySku":null,"ebayItemId":null}
 ]
