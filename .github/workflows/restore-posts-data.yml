@@ -1,0 +1,32 @@
+name: Restore feed data
+on:
+  push:
+    paths:
+      - '.github/workflows/restore-posts-data.yml'
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore complete feed and apply verified freshness corrections
+        run: |
+          git checkout 03935dd8c5c4353c933de2498410873e96e42060 -- data/posts.js
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('data/posts.js')
+          s=p.read_text()
+          s=s.replace('title:"Bose Sport Open vs Ultra Open 2 vs the $199 original Ultra Open"','title:"Bose Sport Open vs Ultra Open 2 vs the older Ultra Open"')
+          s=s.replace('excerpt:"Two new Bose open-ear models enter preorder today. The older Ultra Open is the value wildcard while Bose still shows it at $199."','excerpt:"Compare the new $199 Sport Open and $299 Ultra Open 2 with the older Ultra Open before buying."')
+          s=s.replace('body:["Bose Sport Open is $199 and Ultra Open Earbuds (2nd Gen) is $299, with preorders opening September 19 and availability October 1.","Bose\'s own open-ear comparison currently shows the original Ultra Open at $199, making the real shopping question new Sport versus discounted older flagship versus the new premium model."]','body:["Bose Sport Open is $199 and Ultra Open Earbuds (2nd Gen) is $299.","Ultra Open 2 availability begins October 1; Sport Open availability begins October 15. Check the older Ultra Open current price before deciding."]')
+          s=s.replace('body:["Current shopping data surfaced the PS5 Pro 2TB at $899 and in stock at PlayStation Direct and an exact Sony console listing at Walmart. Inventory can change quickly.","PlayStation confirms GTA VI releases November 19, 2026 on both PS5 and PS5 Pro, so the standard PS5 remains a valid alternative when Pro inventory or resale pricing is unfavorable."]','body:["The latest verified U.S. restock reporting lists Amazon, Best Buy, Walmart, Target and PlayStation Direct as sold out.","PlayStation confirms GTA VI releases November 19, 2026 on both PS5 and PS5 Pro, so the standard PS5 remains a valid alternative when Pro inventory or resale pricing is unfavorable."]')
+          p.write_text(s)
+          PY
+          git config user.name 'TheRealDealz automation'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/posts.js
+          git commit -m 'Restore complete feed and refresh Bose PS5 claims'
+          git push
