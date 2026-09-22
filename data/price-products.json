@@ -17,5 +17,9 @@
   {"id":"iphone18CarCharger","amazonAsin":"B0CT8GDXLW","bestBuySku":null,"ebayItemId":null},
   {"id":"iphone18MagsafeWallet","amazonAsin":"B0D9W9VYPN","bestBuySku":null,"ebayItemId":null},
   {"id":"iphone18CarMount","amazonAsin":"B0F6D28F7R","bestBuySku":null,"ebayItemId":null},
-  {"id":"pokemon30ETB","amazonAsin":"B0H78BB9TY","bestBuySku":null,"ebayItemId":null}
+  {"id":"pokemon30ETB","amazonAsin":"B0H78BB9TY","bestBuySku":null,"ebayItemId":null},
+  {"id":"googlebookAcer14","amazonAsin":null,"bestBuySku":"6690085","ebayItemId":null},
+  {"id":"googlebookDellXps","amazonAsin":null,"bestBuySku":"6690181","ebayItemId":null},
+  {"id":"googlebookAsus14","amazonAsin":null,"bestBuySku":"6686332","ebayItemId":null},
+  {"id":"googlebookHp14","amazonAsin":null,"bestBuySku":"6687893","ebayItemId":null}
 ]
